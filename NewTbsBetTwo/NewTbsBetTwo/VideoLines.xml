@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VideoLine>
+	<option>
+		<tableID>1</tableID>
+		<url>ws://122.152.162.185:8805</url>
+	</option>
+	<option>
+		<tableID>11</tableID>
+		<url>ws://192.168.0.134:10005</url>
+	</option>
+	<option>
+		<tableID>4</tableID>
+		<url>ws://192.168.0.134:10003</url>
+	</option>
+	<option>
+		<tableID>12</tableID>
+		<url>ws://192.168.0.134:10007</url>
+	</option>
+	<option>
+		<tableID>5</tableID>
+		<url>ws://192.168.0.134:10009</url>
+	</option>
+	<option>
+		<tableID>3</tableID>
+		<url>ws://192.168.0.134:10011</url>
+	</option>
+</VideoLine>

@@ -1,0 +1,37 @@
+<ion-popover-view ng-controller='GamePopCtrl' class="gamepop">
+	<ion-content scroll=false>
+		<div class="list">
+			<a class="item">
+				<span>logo</span>
+			</a>
+			<a class="item">
+				<div>
+					<img ng-src="img/lobby/head.png" />
+					<span>{{topdata.name}}</span>
+				</div>
+				<div>
+					<img ng-src="img/lobby/money.png" />
+					<span>{{topdata.blance}}</span>
+				</div>
+
+			</a>
+			<a class="item item-icon-left" ng-click="BackLobby()">
+				<i class="icon ion-ios-home"></i>
+				<span>大厅</span>
+			</a>
+			<a class="item item-icon-left" ng-click="UserInfo()">
+				<i class="icon ion-ios-person"></i>
+				<span>信息</span>
+			</a>
+			<a class="item item-icon-left" ng-click="StateMent()">
+				<i class="icon ion-ios-paper"></i>
+				<span>记录</span>
+			</a>
+			<a class="item item-icon-left" ng-click="Setting()">
+				<i class="icon ion-ios-gear"></i>
+				<span>设定</span>
+			</a>
+
+		</div>
+	</ion-content>
+</ion-popover-view>

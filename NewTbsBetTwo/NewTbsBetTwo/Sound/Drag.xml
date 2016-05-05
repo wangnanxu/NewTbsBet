@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<music>
+  <song name="Dt_ch">
+    <mu name="enter">Sound/DT_CH/49.mp3</mu>
+    <mu name="betstart">Sound/DT_CH/50.mp3</mu>
+    <mu name="betsuccess">Sound/DT_CH/51.mp3</mu>
+    <mu name="betstop">Sound/DT_CH/52.mp3</mu>
+    <mu name="win">
+      <add name="1">Sound/DT_CH/53.mp3</add>
+      <add name="2">Sound/DT_CH/54.mp3</add>
+      <add name="0">Sound/DT_CH/55.mp3</add>
+    </mu>
+    <mu name="resoult">
+      <add name="11">Sound/DT_CH/56.mp3</add>
+      <add name="12">Sound/DT_CH/57.mp3</add>
+      <add name="13">Sound/DT_CH/58.mp3</add>
+      <add name="14">Sound/DT_CH/59.mp3</add>
+      <add name="15">Sound/DT_CH/60.mp3</add>
+      <add name="16">Sound/DT_CH/61.mp3</add>
+      <add name="17">Sound/DT_CH/62.mp3</add>
+      <add name="18">Sound/DT_CH/63.mp3</add>
+      <add name="19">Sound/DT_CH/64.mp3</add>
+      <add name="110">Sound/DT_CH/65.mp3</add>
+      <add name="111">Sound/DT_CH/66.mp3</add>
+      <add name="112">Sound/DT_CH/67.mp3</add>
+      <add name="113">Sound/DT_CH/68.mp3</add>
+      <add name="21">Sound/DT_CH/69.mp3</add>
+      <add name="22">Sound/DT_CH/70.mp3</add>
+      <add name="23">Sound/DT_CH/71.mp3</add>
+      <add name="24">Sound/DT_CH/72.mp3</add>
+      <add name="25">Sound/DT_CH/73.mp3</add>
+      <add name="26">Sound/DT_CH/74.mp3</add>
+      <add name="27">Sound/DT_CH/75.mp3</add>
+      <add name="28">Sound/DT_CH/76.mp3</add>
+      <add name="29">Sound/DT_CH/77.mp3</add>
+      <add name="210">Sound/DT_CH/78.mp3</add>
+      <add name="211">Sound/DT_CH/79.mp3</add>
+      <add name="212">Sound/DT_CH/80.mp3</add>
+      <add name="213">Sound/DT_CH/81.mp3</add>
+    </mu>
+    <mu name="changeboot">Sound/DT_CH/82.mp3</mu>
+    <mu name="changetable">Sound/DT_CH/83.mp3</mu>
+    <mu name="balance">Sound/DT_CH/84.mp3</mu>
+    <mu name="thanks">Sound/DT_CH/85.mp3</mu>
+    <mu name="nobet">Sound/DT_CH/86.mp3</mu>
+    <mu name="sitdown">
+      <add name="1">Sound/DT_CH/87.mp3</add>
+      <add name="2">Sound/DT_CH/88.mp3</add>
+      <add name="3">Sound/DT_CH/89.mp3</add>
+      <add name="5">Sound/DT_CH/90.mp3</add>
+      <add name="6">Sound/DT_CH/91.mp3</add>
+      <add name="7">Sound/DT_CH/92.mp3</add>
+      <add name="8">Sound/DT_CH/93.mp3</add>
+    </mu>
+  </song>
+  <song name="Dt_en">
+    <mu name="enter">Sound/DT_EN/49.mp3</mu>
+    <mu name="betstart">Sound/DT_EN/50.mp3</mu>
+    <mu name="betsuccess">Sound/DT_EN/51.mp3</mu>
+    <mu name="betstop">Sound/DT_EN/52.mp3</mu>
+    <mu name="win">
+      <add name="1">Sound/DT_EN/53.mp3</add>
+      <add name="2">Sound/DT_EN/54.mp3</add>
+      <add name="0">Sound/DT_EN/55.mp3</add>
+    </mu>
+    <mu name="resoult">
+      <add name="11">Sound/DT_EN/56.mp3</add>
+      <add name="12">Sound/DT_EN/57.mp3</add>
+      <add name="13">Sound/DT_EN/58.mp3</add>
+      <add name="14">Sound/DT_EN/59.mp3</add>
+      <add name="15">Sound/DT_EN/60.mp3</add>
+      <add name="16">Sound/DT_EN/61.mp3</add>
+      <add name="17">Sound/DT_EN/62.mp3</add>
+      <add name="18">Sound/DT_EN/63.mp3</add>
+      <add name="19">Sound/DT_EN/64.mp3</add>
+      <add name="110">Sound/DT_EN/65.mp3</add>
+      <add name="111">Sound/DT_EN/66.mp3</add>
+      <add name="112">Sound/DT_EN/67.mp3</add>
+      <add name="113">Sound/DT_EN/68.mp3</add>
+      <add name="21">Sound/DT_EN/69.mp3</add>
+      <add name="22">Sound/DT_EN/70.mp3</add>
+      <add name="23">Sound/DT_EN/71.mp3</add>
+      <add name="24">Sound/DT_EN/72.mp3</add>
+      <add name="25">Sound/DT_EN/73.mp3</add>
+      <add name="26">Sound/DT_EN/74.mp3</add>
+      <add name="27">Sound/DT_EN/75.mp3</add>
+      <add name="28">Sound/DT_EN/76.mp3</add>
+      <add name="29">Sound/DT_EN/77.mp3</add>
+      <add name="210">Sound/DT_EN/78.mp3</add>
+      <add name="211">Sound/DT_EN/79.mp3</add>
+      <add name="212">Sound/DT_EN/80.mp3</add>
+      <add name="213">Sound/DT_EN/81.mp3</add>
+    </mu>
+    <mu name="changeboot">Sound/DT_EN/82.mp3</mu>
+    <mu name="changetable">Sound/DT_EN/83.mp3</mu>
+    <mu name="balance">Sound/DT_EN/84.mp3</mu>
+    <mu name="thanks">Sound/DT_EN/85.mp3</mu>
+    <mu name="nobet">Sound/DT_EN/86.mp3</mu>
+    <mu name="sitdown">
+      <add name="1">Sound/DT_EN/87.mp3</add>
+      <add name="2">Sound/DT_EN/88.mp3</add>
+      <add name="3">Sound/DT_EN/89.mp3</add>
+      <add name="5">Sound/DT_EN/90.mp3</add>
+      <add name="6">Sound/DT_EN/91.mp3</add>
+      <add name="7">Sound/DT_EN/92.mp3</add>
+      <add name="8">Sound/DT_EN/93.mp3</add>
+    </mu>
+  </song>
+</music>

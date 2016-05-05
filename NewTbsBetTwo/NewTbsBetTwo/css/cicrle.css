@@ -1,0 +1,64 @@
+.wrapper{
+  width: 1.5rem;
+  height: 3rem;
+  position: absolute;
+  top:0;
+  overflow: hidden;
+}
+.right{
+  right:0;
+}
+.left{
+  right: 1.5rem;
+}
+.circleProgress{
+  width: 3rem;
+  height: 3rem;
+  border:3px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  -webkit-transform: rotate(45deg);
+}
+.rightcircle{
+  border-top:3px solid #FFFF00;
+  border-right:3px solid #FFFF00;
+  right:0;
+}
+.leftcircle{
+    border-bottom:3px solid #FFFF00;
+    border-left:3px solid #FFFF00;
+    left:0;
+}
+.lobby-wrapper{
+  width: 0.6rem;
+  height: 1.2rem;
+  position: absolute;
+  top:0;
+  overflow: hidden;
+}
+.lobby-right{
+  right:0;
+}
+.lobby-left{
+  right: 0.6rem;
+}
+.lobby-circleProgress{
+  width: 1.2rem;
+  height: 1.2rem;
+  border:2px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+  top:0;
+  -webkit-transform: rotate(45deg);
+}
+.lobby-rightcircle{
+  border-top:2px solid #FFFF00;
+  border-right:2px solid #FFFF00;
+  right:0;
+}
+.lobby-leftcircle{
+    border-bottom:2px solid #FFFF00;
+    border-left:2px solid #FFFF00;
+    left:0;
+}

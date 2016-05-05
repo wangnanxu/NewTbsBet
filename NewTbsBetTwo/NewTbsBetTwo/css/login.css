@@ -1,0 +1,98 @@
+.login-bg {
+	background-image: url('../img/login/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.login-lang{
+    margin: 5% 0 0 80%;
+    width: 15%;
+}
+.login-langimg{
+	width: 48px;
+}
+.login-logodiv {
+	margin: 34% 0 0 10%;
+	width: 90%;
+}
+
+.login-logoimg {
+	width: 100%;
+}
+
+.login-item {
+	margin: 4% 0 0 4%;
+}
+
+.login-item input {
+	display: initial;
+	width: 85%;
+	box-shadow: inset 0 0 10px #333333;
+	-webkit-box-shadow: inset 0 0 10px #333333;
+	border-radius: 4px;
+	height: 45px;
+}
+
+.login-btn {
+	border-width: 0px;
+    border-radius: 6px;
+    width: 82%;
+    height: 38px;
+    margin: 3% 0 0 4%;
+    color: #000000;
+    font-size: 23px;
+    font-weight: bolder;
+    box-shadow: inset 0px 0px 20px;
+    -webkit-box-shadow: inset 0px 0px 20px;
+}
+.lang-bg{
+	width: 12%;
+    border-radius: 30px;
+    background-color: #2B2828;
+}
+.lang-item{
+	
+}
+.lang-img{
+	width: 100%;
+}
+.message-div{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+.message-divbg{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #000000;
+    opacity: 0.6;
+    z-index: -1;
+}
+.message-data{
+	color: #ffffff;
+    width: 60%;
+    margin: 70% auto;
+    background: -webkit-linear-gradient( top,#244453,#234352);
+}
+.message-maxdata{
+    height: 5rem;
+}
+.message-mindata{
+    height: 4rem;
+}
+.message-data div{
+	text-align: center;
+}
+.message-data button{
+	max-height: 1rem;
+	
+}
+.message-data .rightbtn{
+	float: right;
+}
+.message-message{
+	line-height: 4rem;
+}
+    
+

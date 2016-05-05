@@ -1,0 +1,9 @@
+<ion-popover-view class="lang-bg">
+	<ion-content scroll=false >
+		<div ng-repeat="item in langlist track by item.lang" ng-if="item.lang!=lang.lang">
+			<a ng-click="SelectLanguage({{item}})" class="lang-item">
+				<img ng-src="{{item.src}}" alt="img/login/CH.png"  class="lang-img"/>
+			</a>
+		</div>
+	</ion-content>
+</ion-popover-view>

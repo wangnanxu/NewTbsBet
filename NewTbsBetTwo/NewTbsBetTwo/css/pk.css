@@ -1,0 +1,186 @@
+.bacc-pklist{
+	display: flex;
+}
+.bacc-pkresult{
+	position: absolute;
+    width: 12%;
+    text-align: center;
+}
+.bacc-pktool{
+    line-height: 1rem;
+    font-weight: bolder;
+}
+.bacc-pkplayer{
+    color: #29ABE2;
+    font-size: 3rem;
+    margin-top: 30%;
+}
+.bacc-pkbanker{
+    color: #FF0000;
+    font-size: 3rem;
+    margin-top: 30%;
+}
+.pka{
+	width: 100%;
+    background: url("../img/game/pk/allpk.png") no-repeat;
+    vertical-align: middle;
+    background-size: 1300% 400%;
+}
+.pk1{
+	background-position: 0 0;
+}
+.pk2{
+	background-position: 8.2% 0;
+}
+.pk3{
+	background-position: 16.5% 0px;
+}
+.pk4{
+	background-position: 24.7% 0px;
+}
+.pk5{
+	background-position: 33% 0px;
+}
+.pk6{
+	background-position: 41.3% 0px;
+}
+.pk7{
+	background-position: 49.5%  0px;
+}
+.pk8{
+	background-position: 57.7%  0px;
+}
+.pk9{
+	background-position: 66%   0px;
+}
+.pk10{
+	background-position: 74.3%   0px;
+}
+.pk11{
+	background-position: 82.8%   0px;
+}
+.pk12{
+	background-position: 91.1%   0px;
+}
+.pk13{
+	background-position: 99.4%   0px;
+}
+.pk14{
+	background-position: 0 33.5%;
+}
+.pk15{
+	background-position: 8.2% 33.5%;
+}
+.pk16{
+	background-position: 16.5%  33.5%;
+}
+.pk17{
+	background-position: 24.7%  33.5%;
+}
+.pk18{
+	background-position: 33% 33.5%;
+}
+.pk19{
+	background-position: 41.3% 33.5%;
+}
+.pk20{
+	background-position: 49.5% 33.5%;
+}
+.pk21{
+	background-position: 57.7% 33.5%;
+}
+.pk22{
+	background-position: 66% 33.5%;
+}
+.pk23{
+	background-position: 74.3% 33.5%;
+}
+.pk24{
+	background-position: 82.6% 33.5%;
+}
+.pk25{
+	background-position: 90.8% 33.5%;
+}
+.pk26{
+	background-position: 98.8% 33.5%;
+}
+.pk27{
+	background-position: 0px 66%;
+}
+.pk28{
+	background-position: 8.2% 66%;
+}
+.pk29{
+	background-position: 16.5%  66%;
+}
+.pk30{
+	background-position: 24.7%  66%;
+}
+.pk31{
+	background-position: 33%  66%;
+}
+.pk32{
+	background-position: 41.3%  66%;
+}
+.pk33{
+	background-position: 49.5%  66%;
+}
+.pk34{
+	background-position: 57.7%  66%;
+}
+.pk35{
+	background-position: 66%   66%;
+}
+.pk36{
+	background-position: 74.3%   66%;
+}
+.pk37{
+	background-position: 82.5%   66%;
+}
+.pk38{
+	background-position: 90.8%   66%;
+}
+.pk39{
+	background-position: 99%   66%;
+}
+.pk40{
+	background-position: 0px 99%;
+}
+.pk41{
+	background-position: 8.2%  99%;
+}
+.pk42{
+	background-position: 16.5%  99%;
+}
+.pk43{
+	background-position: 24.7%  99%;
+}
+.pk44{
+	background-position: 33% 99%;
+}
+.pk45{
+	background-position: 41.3% 99%;
+}
+.pk46{
+	background-position: 49.5% 99%;
+}
+.pk47{
+	background-position: 57.7% 99%;
+}
+.pk48{
+	background-position: 66% 99%;
+}
+.pk49{
+	background-position: 74.3% 99%;
+}
+.pk50{
+	background-position: 82.5% 99%;
+}
+.pk51{
+	background-position: 90.8% 99%;
+}
+.pk52{
+	background-position: 99%  99%;
+}
+
+

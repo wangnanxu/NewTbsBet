@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Casino Mobile</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width,minimal-ui">
+		<!--全屏显示，移出ios状态栏和地址栏-->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!--全屏显示-->
+		<meta name="mobile-web-app-capable" content="yes"> 
+		<!--ios状态栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<!--uc全屏-->
+		<meta name="full-screen" content="yes">
+		<!--QQ全屏-->
+		<meta name="x5-fullscreen" content="true">
+		<!-- 是针对一些老的不识别viewport的浏览器，列如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- 微软的老式浏览器 -->
+		<meta name="MobileOptimized" content="320">
+		<link rel="stylesheet" type="text/css" href="libs/ionic/css/ionic.css" />
+		<link rel="stylesheet" type="text/css" href="css/lobby.css" />
+		<link rel="stylesheet" type="text/css" href="css/game.css" />
+		<link rel="stylesheet" type="text/css" href="css/bacc.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/dragon.css" />
+		<link rel="stylesheet" type="text/css" href="css/roul.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link rel="stylesheet" type="text/css" href="css/pk.css" />
+		<link rel="stylesheet" type="text/css" href="css/cicrle.css" />
+
+		<script src="libs/ionic/js/ionic.bundle.js"></script>
+		<script src="Scripts/jquery-1.6.4.min.js"></script>
+		<script src="Scripts/jquery.signalR-2.2.0.js"></script>
+		<script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+		<script src="signalr/hubs"></script>
+
+		<script src="Scripts/app.js"></script>
+		<script src="Scripts/comm/module.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/commFun.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/scoket/scoketServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/scoket/clientServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/cmd/command.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/limitServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/comm/language/language.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/login/loginCtrl.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/lobby/lobbyCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/lobby/lobbyServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/statement/statementCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/setting/settingCtrl.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/comm/gameSendServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/comm/gameCommFun.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/comm/gameReciveServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/comm/jsmpg.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/comm/xml2json.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/comm/soundServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<!--<script src="Scripts/game/historyRoad/baccAndDragon/historyRoad.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccHistoryManagerForLobby.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccBigEyeTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccBigEyeViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccBigTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccBigViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccHistoryManager.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccSmallForcedTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccSmallForcedViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccSmallTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccSmallViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccTableServLobby.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/baccViewServLobby.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/baccAndDragon/CanvasServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/bigSmallTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/bigSmallViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/evenOldTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/evenOldViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/redBlackTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/redBlackViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/roulHistoryManagerForLobby.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/RoulTableServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/RoulViewServ.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/historyRoad/roulHistoryRoad/roulroad.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/chipSelect/chipSelectManager.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/baccarat/baccCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/baccarat/baccServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/inbaccarat/inbaccCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/inbaccarat/inbaccServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/roulette/roulCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/roulette/roulServ.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="Scripts/game/dragonTiger/dragonCtrl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Scripts/game/dragonTiger/dragonServ.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function(win) {
+				var doc = win.document;
+				// If there's a hash, or addEventListener is undefined, stop here
+				if (!win.navigator.standalone && !location.hash && win.addEventListener) {
+					//scroll to 1
+					win.scrollTo(0, 1);
+					var scrollTop = 1,
+						getScrollTop = function() {
+							return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+						},
+						//reset to 0 on bodyready, if needed
+						bodycheck = setInterval(function() {
+							if (doc.body) {
+								clearInterval(bodycheck);
+								scrollTop = getScrollTop();
+								win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+							}
+						}, 15);
+					win.addEventListener("load", function() {
+						setTimeout(function() {
+							//at load, if user hasn't scrolled more than 20 or so...
+							if (getScrollTop() < 20) {
+								//reset to hide addr bar at onload
+								win.scrollTo(0, scrollTop === 1 ? 0 : 1);
+							}
+						}, 0);
+					}, false);
+				}
+			})(this)
+		</script>
+
+	</head>
+
+	<body ng-app="tbsBet">
+		<ion-nav-view></ion-nav-view>
+
+	</body>
+
+</html>

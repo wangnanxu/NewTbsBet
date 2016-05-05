@@ -1,0 +1,30 @@
+<div class="lobby-title">
+	<button class="button button-clear " ng-click="GoLobbyBack()">
+		<img ng-src="img/login/back.png" alt="Back" class="lobby-backimg" />
+	</button>
+	<div class="game-info">
+		<img ng-src="img/login/user.png" class="lobby-userimg" />
+		<span class="spaninline">{{topdata.name}}</span>
+	</div>
+	<div class="game-setchipbtn">
+		<button class="button button-clear" ng-click="TargetShowChips()">
+			<img ng-src="{{serverdata.chips[serverdata.selectchip.index].src}}" alt="SetChip"/>
+		</button>
+		<!--<img ng-src="img/login/balance.png" class="lobby-moneyimg" />
+		<span class="spaninline">{{(topdata.blance-serverdata.unconfirmbet)|currency:''}}</span>-->
+	</div>
+</div>
+<div class="game-status row row-wrap">
+	<div class="col col-33 game-statusbg">
+		<span class="messagespan">{{serverdata.table.tableName}}</span>
+	</div>
+	<div class="col col-33 game-statusbg game-statusmi">
+		<span class="spaninline">{{serverdata.table.statusText}}</span>
+	</div>
+	<div class="col col-33 game-statusbg game-statusNo">
+		<span class="spaninline">{{language.Game[0]}}:{{serverdata.table.juNu}}</span>
+	</div>
+</div>
+<div class="player-button" ng-click="TagVolume()" ng-class="{'player-stop-button':isStopPlay}">
+	<audio id="a_Audio" ng-src="{{serverdata.table.sound}}" preload="auto"></audio>
+</div>

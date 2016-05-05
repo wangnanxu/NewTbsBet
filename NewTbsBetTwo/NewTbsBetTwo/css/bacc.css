@@ -1,0 +1,295 @@
+.spaninline{
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: normal;
+	
+}
+.messagespan{
+	width: 100%;
+	overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    text-overflow: ellipsis;
+}
+    
+.game-info{
+	display: inline;
+    text-align: right;
+    line-height: 3rem;
+}
+.game-info span{
+	font-size: 1.2rem;
+    color: #CCCCCC;
+}
+.game-setchipbtn{
+	float: right;
+	padding-top: 8px;
+    text-align: right;
+    line-height: 2rem;
+}
+.game-setchipbtn button{
+	margin: -8px;
+    width: 4.5rem;
+}
+.game-setchipbtn img{
+	width: 100%;
+}
+.game-status{
+	margin: 0px;
+	padding: 0px;
+}
+.game-status .col{
+	margin: 0px;
+	padding: 0px;
+}
+.game-statusbg{
+	background-image: url(../img/game/bacc/infobg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: inset 0 0 10px #688092;
+}
+.game-status span{
+	color: #CCCCCC;
+	font-size: 0.6rem;
+}
+.game-statusmi{
+	text-align: center;
+}
+.game-statusNo{
+	text-align:right;
+}
+.bacc-video{
+	position:absolute;
+	z-index: -999;
+}
+.game-videowidth{
+	width: 100%;
+}
+.game-roadcanvas{
+	position: absolute;
+    z-index: -1;
+    width: 85%;
+}
+.game-road{
+	height: 9rem;
+	margin: 0px;
+	padding: 0px;
+}
+.game-road .col{
+	margin: 0px;
+	padding: 0px;
+}
+.game-roadbg{
+	position: absolute;
+	z-index: -1;
+	opacity: 0.8;
+	width: 80%;
+}
+.game-roadbg img{
+	width: 42%;
+}
+.game-roadhead{
+	background-image: url('../img/game/bacc/roadtitlebg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 1.5rem;
+}
+.game-roadhead button{
+	float: right;
+}
+.game-roadhead span{
+	color: #CCCCCC;
+	margin-left: 1rem;
+    line-height: 2rem;
+}
+.game-roadbtn{
+	width:1rem;
+}
+.game-roadbtntran{
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+}
+.game-hide{
+	height: 2rem;
+}
+.game-time{
+	height: 3rem;
+	line-height: 3rem;
+    color: #cccccc;
+    position: relative;
+}
+.game-timedata{
+	 float: right;
+    width: 3rem;
+    color: #FFFF00;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: rgb(0, 0, 0) 0px 0px 10px;
+    background-color: rgb(51, 51, 51);
+}
+.game-timedatared{
+	color:red;
+}
+.game-chipdiv{
+	position: absolute;
+	top: 50px;
+	left: 6%;
+	width: 80%;
+	margin: 0px;
+	padding: 0px;
+	border-radius: 1rem;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	transform-origin: right top;
+	-webkit-transform-origin: right top;
+	-moz-transform-origin: right top;
+	display: inline-flex;
+    background: -webkit-linear-gradient( top,#000,#244453);
+    background: linear-gradient( top,#000,#244453);
+    background: -moz-linear-gradient( top,#000,#244453);
+    box-shadow: inset 0 0 10px 0px #CCCCCC;
+	-webkit-box-shadow: inset 0 0 10px 0px #CCCCCC;
+	}
+.game-chipdiv .col{
+	margin: 0px;
+	padding: 0px;
+}
+.game-chipdiv  .bgimg{
+	width: 100%;
+}
+.game-chipdiv	.img-chip{
+	width: 100%;
+	display: block;
+    margin: auto;
+    transform:rotate(90deg) scale(1.2);
+	-webkit-transform:rotate(90deg) scale(1.2);
+	-moz-transform:rotate(90deg) scale(1.2);
+}
+.game-chipdiv .chipbg{
+	position: absolute;
+}
+.game-chipdiv .zIndex{
+	z-index:1;
+}
+.game-chipdiv .chip-btn{
+	margin: auto;
+}
+.game-chipdiv .chip-btn img{
+	width: 1.1rem;
+	vertical-align: middle;
+}
+.game-betposbtn{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.game-betposbtn .col{
+	margin: 0px;
+	padding: 1px;
+	border: solid 2px #244453;
+    border-radius: 6px;
+    background: -webkit-linear-gradient( top,#999999,#666666);
+    background: linear-gradient( top,#999999,#666666);
+    background: -moz-linear-gradient( top,#999999,#666666);
+    box-shadow: 0px 0px 8px #000000;
+}
+#repeat .activated{
+	background: -webkit-linear-gradient( top,#cccccc,#000000);
+    background: linear-gradient( top,#cccccc,#000000);
+    background: -moz-linear-gradient( top,#cccccc,#000000);
+    color: #ffffff;
+}
+#back .activated{
+	background: -webkit-linear-gradient( top,#214253,#000000);
+    background: linear-gradient( top,#214253,#000000);
+    background: -moz-linear-gradient( top,#214253,#000000);
+    color: #ffffff;
+}
+#cancel .activated{
+	background: -webkit-linear-gradient( top,#ff0000,#000000);
+    background: linear-gradient( top,#ff0000,#000000);
+    background: -moz-linear-gradient( top,#ff0000,#000000);
+    color: #ffffff;
+}
+#confirm .activated{
+	background: -webkit-linear-gradient( top,#39B54A,#000000);
+    background: linear-gradient( top,#39B54A,#000000);
+    background: -moz-linear-gradient( top,#39B54A,#000000);
+    color: #ffffff;
+}
+.game-betposbtn .btnbgunable{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.game-betposbtn .unopacitydata{
+	opacity: 0.3;
+}
+/*.game-betposbtn .btnimgbgunable{
+    background-color: #cccccc;
+}
+.game-betposbtn .btntextbgunable{
+	background: -webkit-linear-gradient( left,#cccccc,#999999);
+    background: linear-gradient( left,#cccccc,#999999);
+    background: -moz-linear-gradient( left,#cccccc,#999999);
+}*/
+.game-betposbtn .btntextbg{
+    line-height: 2rem;
+    font-size: 0.9rem;
+    color: #000000;
+}
+.game-betposbtn .btnimg{
+	width: 1rem;
+    height: 0.9rem;
+}
+.game-bottom {
+	margin-top: 3px;
+	background: -webkit-linear-gradient( top,#999999,#244453);
+	color: #cccccc;
+    font-size: 0.6rem;
+}
+.game-bottom .betmoney{
+	float: right;
+	margin-right: 20px;
+}
+.game-betwin{
+	animation:changebg 1s ease-in-out;
+	-moz-animation:changebg 1s ease-in-out; /* Firefox */
+	-webkit-animation:changebg 1s ease-in-out; /* Safari and Chrome */
+	animation-iteration-count:4;
+	-moz-animation-iteration-count:4;
+	-webkit-animation-iteration-count:4;
+}
+@keyframes changebg{
+	0%,100%{
+		background-color: #244453;
+	}
+	50%{
+		background-color: #286177;
+	}
+}
+@-webkit-keyframes changebg{
+	0%,100%{
+		background-color: #244453;
+	}
+	50%{
+		background-color: #286177;
+	}
+}
+@-moz-keyframes changebg{
+	0%,100%{
+		background-color: #244453;
+	}
+	50%{
+		background-color: #286177;
+	}
+}
+.game-panebg{
+	z-index: -1;
+}
+.game-winmoney{
+	margin-left: 1rem;
+}
+	

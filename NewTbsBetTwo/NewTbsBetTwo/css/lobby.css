@@ -1,0 +1,132 @@
+*{margin:0;padding:0;}
+.lobby-bg{
+	height:100%;
+	background-image: url('../img/login/lobbybg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.lobby-title{
+	background-image: url('../img/login/headbg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.lobby-backimg{
+	width: 2.8rem;
+    margin-top: 5px;
+}
+
+.lobby-info{
+	float: right;
+	padding-top: 8px;
+	margin-right: 43px;
+    text-align: right;
+    line-height: 2rem;
+}
+.lobby-audiobtn{
+	position: absolute;
+    z-index: 100;
+    display: block;
+   	top: 6px;
+    right: 3px;
+    width: 36px;
+    height: 36px;
+    background-image: url(http://statics.xiumi.us/stc/images/music.png);
+    background-size: 72px 36px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.lobby-userimg{
+	width: 1rem;
+    vertical-align: middle;
+}
+.lobby-moneyimg{
+	width: 2rem;
+    vertical-align: middle;
+}
+.lobby-info span{
+	font-size: 1.2rem;
+    color: #CCCCCC;
+}
+.lobby-tables{
+	height: 80%;
+}
+.lobby-room{
+	width: 100%;
+	height: 100%;
+}
+.lobby-table{
+	position: relative;
+}
+.Table-imgdiv{
+	z-index: -999;
+	text-align: center;
+}
+.Table-bgimg{
+	width: 90%;
+}
+.Table-name{
+	width: 47%;
+    left: 42%;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+.Table-canvas{
+	position: absolute;
+    top: 42%;
+    z-index: 0;
+    width: 100%;
+}
+.Table-statusdiv{
+	position: absolute;
+    width: 70%;
+    top: 80%;
+    left: 15%;
+    background-color: #000000;
+}
+.lobby-table .row,.lobby-table .col{
+	margin: 0px;
+	padding: 0px;
+}
+.Table-status{
+	color:#FFFFFF;
+	margin-left: 5%;
+	font-size: 0.8rem;
+}
+.Table-time{
+	text-align: right;
+    height: 23px;
+}
+.Table-timebg{
+	width: 23px;
+}
+.Table-timedata{
+	width:1.2rem;
+	float: right;
+	text-align: center;
+    color: #D8D42D;
+    font-size: 0.6rem;
+}
+.limit-div{
+	text-align: center;
+    margin-top: 10%;
+}
+.limit-tableName{
+	 display: block;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 5%;
+}
+.limit-btn{
+	width: 80%;
+    box-shadow: inset 0 0 30px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin-top: 2%;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+

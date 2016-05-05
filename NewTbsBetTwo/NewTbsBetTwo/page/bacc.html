@@ -1,0 +1,195 @@
+<ion-view>
+	<ion-content class="lobby-bg" scroll=false>
+		<root-Message></root-Message>
+		<ion-scroll id="PaneScroll">
+			<game-Title></game-Title>
+			<div id="Game_video">
+				<div class="bacc-video" ng-show="showvideo">
+					<canvas id="videoCanvas" class="game-videowidth" width="640" height="360">
+					<p>
+						Please use a browser that supports the Canvas Element, like
+						<a href="http://www.google.com/chrome">Chrome</a>,
+						<a href="http://www.mozilla.com/firefox/">Firefox</a>,
+						<a href="http://www.apple.com/safari/">Safari</a> or Internet Explorer 10
+					</p>
+				</canvas>
+				</div>
+				<div class="game-road row row-wrap">
+					<div class="col col-33" ng-model="pretable" ng-init="pretable=true">
+						<div class="game-roadbg">
+							<img ng-src="img/game/bacc/roadbg.png" alt="" ng-class="{'game-hide':!pretable}" />
+						</div>
+						<div class="game-roadhead">
+							<span>{{language.Game[1]}}</span>
+							<button class="button-clear" ng-click="pretable=!pretable">
+							<img ng-src="img/game/bacc/roadbtn.png" class="game-roadbtn" ng-class="{'game-roadbtntran':!pretable}"/>
+						</button>
+						</div>
+						<div ng-show="pretable">
+							<canvas id="ba_canvas" class="game-roadcanvas"></canvas>
+							<canvas id="aa_canvas" class="game-roadcanvas"></canvas>
+						</div>
+					</div>
+					<div class="col col-33">
+
+					</div>
+					<div class=" col col-33" ng-model="bigtable" ng-init="bigtable=true">
+						<div class="game-roadbg">
+							<img ng-src="img/game/bacc/roadbg.png" alt="" ng-class="{'game-hide':!bigtable}" />
+						</div>
+						<div class="game-roadhead">
+							<span>{{language.Game[1]}}</span>
+							<button class="button-clear" ng-click="bigtable=!bigtable">
+							<img ng-src="img/game/bacc/roadbtn.png" class="game-roadbtn"  ng-class="{'game-roadbtntran':!bigtable}"/>
+						</button>
+						</div>
+						<div ng-show="bigtable">
+							<div>
+								<canvas id="bb_canvas" class="game-roadcanvas"></canvas>
+								<canvas id="ab_canvas" class="game-roadcanvas"></canvas>
+							</div>
+							<div>
+								<canvas id="bc_canvas" class="game-roadcanvas"></canvas>
+								<canvas id="ac_canvas" class="game-roadcanvas"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="game-time">
+				<div class="circleProgress_wrapper" ng-hide="serverdata.table.time<=0 || serverdata.table.status!=2">
+					<div class="wrapper right">
+						<div id="TimeRight" class="circleProgress rightcircle"></div>
+					</div>
+					<div class="wrapper left">
+						<div id="TimeLeft" class="circleProgress leftcircle"></div>
+					</div>
+				</div>
+				<div class="game-timedata" ng-hide="serverdata.table.time<=0 || serverdata.table.status!=2" ng-class="{'game-timedatared':serverdata.table.time<=5}">
+					<span>{{serverdata.table.time}}</span>
+				</div>
+			</div>
+			<div id="Game-Pk" class="bacc-pk row row-wrap">
+				<div class="col col-50 ">
+					<div class="row row-wrap">
+						<div class="col col-75 bacc-pklist">
+							<div class="row row-wrap">
+								<div class="col col-33 pka pk{{serverdata.playerpk[0]}}" ng-if="serverdata.playerpk[0]"></div>
+								<div class="col col-33 pka pk{{serverdata.playerpk[1]}}" ng-if="serverdata.playerpk[1]"></div>
+								<div class="col col-33 pka pk{{serverdata.playerpk[2]}}" ng-if="serverdata.playerpk[2]"></div>
+							</div>
+						</div>
+						<div class="col col-25 ">
+							<div class="bacc-pkresult">
+								<div class="bacc-pktool">
+									<span class="spaninline">{{language.Game[10]}}</span>
+								</div>
+								<div class="bacc-pkplayer">
+									<span>{{serverdata.pkresult[0]}}</span>
+								</div>
+							</div>
+							<img ng-src="img/game/bacc/pkresult.png" alt="" class="bacc-pkresultimg" />
+						</div>
+					</div>
+				</div>
+				<div class="col col-50">
+					<div class="row row-wrap">
+						<div class="col col-25">
+							<div class="bacc-pkresult">
+								<div class="bacc-pktool">
+									<span class="spaninline">{{language.Game[9]}}</span>
+								</div>
+
+								<div class="bacc-pkbanker">
+									<span>{{serverdata.pkresult[1]}}</span>
+								</div>
+
+							</div>
+							<img ng-src="img/game/bacc/pkresult.png" alt="" class="bacc-pkresultimg" />
+
+						</div>
+						<div class="col col-75 bacc-pklist">
+							<div class="row row-wrap">
+								<div class="col col-33 pka pk{{serverdata.bankerPk[0]}}" ng-if="serverdata.bankerPk[0]"></div>
+								<div class="col col-33 pka pk{{serverdata.bankerPk[1]}}" ng-if="serverdata.bankerPk[1]"></div>
+								<div class="col col-33 pka pk{{serverdata.bankerPk[2]}}" ng-if="serverdata.bankerPk[2]"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div id="PaneAll"  ng-class="{'roul-showpane':serverdata.isShowPane,'roul-pane':!serverdata.isShowPane}">
+				<div class="roul-posPane game-panebg"></div>
+				<div>
+					<button class="button button-small roul-panebtn" ng-click="TragetPane()">
+					<img ng-src="img/game/roul/panebtn.png" alt="" class="game-roadbtn" ng-class="{'game-roadbtntran':!serverdata.isShowPane}" />
+				</button>
+				</div>
+				<div class="bacc-pos">
+					<div class="row row-wrap">
+						<a class="col col-50 pos bacc-blue" on-touch="OnBet(3)" ng-class="{'game-betwin':serverdata.winBetpos[3]}">
+							<div class="row row-wrap">
+								<div class="col col-50 ">
+									<span class="player">闲对</span>
+									<span class="player">P:Pair</span>
+								</div>
+								<div class="col col-50">
+									<span class="bacc-bigfont back">1:11</span>
+								</div>
+							</div>
+							<div class="bet" ng-if="serverdata.bet[3]!=0">
+								<span>{{serverdata.bet[3]}}</span>
+							</div>
+						</a>
+						<a class="col col-50 pos bacc-red" on-touch="OnBet(4)" ng-class="{'game-betwin':serverdata.winBetpos[4]}">
+							<div class="row row-wrap ">
+								<div class="col col-50">
+									<span class="bacc-bigfont back">1:11</span>
+								</div>
+								<div class="col col-50 ">
+									<span class="">庄对</span>
+									<span class="">B:Pair</span>
+								</div>
+
+							</div>
+							<div class="bet" ng-if="serverdata.bet[4]!=0">
+								<span>{{serverdata.bet[4]}}</span>
+							</div>
+						</a>
+					</div>
+					<div class="row row-wrap">
+						<a class="col col-33 posb bacc-blue" on-touch="OnBet(0)" ng-class="{'game-betwin':serverdata.winBetpos[0]}">
+							<span class="bacc-bigfont">闲</span>
+							<span>PLAYER</span>
+							<span>1:1</span>
+							<div class="bet" ng-if="serverdata.bet[0]!=0 ">
+								<span>{{serverdata.bet[0]}}</span>
+							</div>
+						</a>
+						<a class="col col-33 posb bacc-green" on-touch="OnBet(2)" ng-class="{'game-betwin':serverdata.winBetpos[2]}">
+							<span class="bacc-bigfont ">和</span>
+							<span>TIE</span>
+							<span>1:8</span>
+							<div class="bet" ng-if="serverdata.bet[2]!=0 ">
+								<span>{{serverdata.bet[2]}}</span>
+							</div>
+						</a>
+						<a class="col col-33 posb bacc-red" on-touch="OnBet(1)" ng-class="{'game-betwin':serverdata.winBetpos[1]}">
+							<span class="bacc-bigfont ">庄</span>
+							<span>BANKER</span>
+							<span>1:0.95</span>
+							<div class="bet" ng-if="serverdata.bet[1]!=0">
+								<span>{{serverdata.bet[1]}}</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<betpos-Btn></betpos-Btn>
+			</div>
+		</ion-scroll>
+		<select-Chips ng-show="serverdata.isShowChips"></select-Chips>
+		<info-Bottom class="roul-bootom"></info-Bottom>
+	</ion-content>
+</ion-view>

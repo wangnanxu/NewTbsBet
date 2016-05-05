@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<music>
+  <song name="Bacc_zh">
+    <mu name="enter">Sound/BACC_ZH/1.mp3</mu>
+    <mu name="betstart">Sound/BACC_ZH/2.mp3</mu>
+    <mu name="betsuccess">Sound/BACC_ZH/3.mp3</mu>
+    <mu name="betstop">Sound/BACC_ZH/4.mp3</mu>
+    <mu name="win">
+      <add name="100">Sound/BACC_ZH/5.mp3</add>
+      <add name="200">Sound/BACC_ZH/6.mp3</add>
+      <add name="000">Sound/BACC_ZH/7.mp3</add>
+      <add name="110">Sound/BACC_ZH/8.mp3</add>
+      <add name="101">Sound/BACC_ZH/9.mp3</add>
+      <add name="111">Sound/BACC_ZH/10.mp3</add>
+      <add name="210">Sound/BACC_ZH/11.mp3</add>
+      <add name="201">Sound/BACC_ZH/12.mp3</add>
+      <add name="211">Sound/BACC_ZH/13.mp3</add>
+      <add name="010">Sound/BACC_ZH/14.mp3</add>
+      <add name="001">Sound/BACC_ZH/15.mp3</add>
+      <add name="011">Sound/BACC_ZH/16.mp3</add>
+    </mu>
+    <mu name="resoult">
+      <add name="11">Sound/BACC_ZH/17.mp3</add>
+      <add name="12">Sound/BACC_ZH/18.mp3</add>
+      <add name="13">Sound/BACC_ZH/19.mp3</add>
+      <add name="14">Sound/BACC_ZH/20.mp3</add>
+      <add name="15">Sound/BACC_ZH/21.mp3</add>
+      <add name="16">Sound/BACC_ZH/22.mp3</add>
+      <add name="17">Sound/BACC_ZH/23.mp3</add>
+      <add name="18">Sound/BACC_ZH/24.mp3</add>
+      <add name="19">Sound/BACC_ZH/25.mp3</add>
+      <add name="10">Sound/BACC_ZH/26.mp3</add>
+      <add name="21">Sound/BACC_ZH/27.mp3</add>
+      <add name="22">Sound/BACC_ZH/28.mp3</add>
+      <add name="23">Sound/BACC_ZH/29.mp3</add>
+      <add name="24">Sound/BACC_ZH/30.mp3</add>
+      <add name="25">Sound/BACC_ZH/31.mp3</add>
+      <add name="26">Sound/BACC_ZH/32.mp3</add>
+      <add name="27">Sound/BACC_ZH/33.mp3</add>
+      <add name="28">Sound/BACC_ZH/34.mp3</add>
+      <add name="29">Sound/BACC_ZH/35.mp3</add>
+      <add name="20">Sound/BACC_ZH/36.mp3</add>
+    </mu>
+    <mu name="changeboot">Sound/BACC_ZH/37.mp3</mu>
+    <mu name="changetable">Sound/BACC_ZH/38.mp3</mu>
+    <mu name="balance">Sound/BACC_ZH/39.mp3</mu>
+    <mu name="thanks">Sound/BACC_ZH/40.mp3</mu>
+    <mu name="nobet">Sound/BACC_ZH/41.mp3</mu>
+    <mu name="sitdown">
+      <add name="1">Sound/BACC_ZH/42.mp3</add>
+      <add name="2">Sound/BACC_ZH/43.mp3</add>
+      <add name="3">Sound/BACC_ZH/44.mp3</add>
+      <add name="4">Sound/BACC_ZH/45.mp3</add>
+      <add name="5">Sound/BACC_ZH/46.mp3</add>
+      <add name="6">Sound/BACC_ZH/47.mp3</add>
+      <add name="7">Sound/BACC_ZH/48.mp3</add>
+    </mu>
+  </song>
+  <song name="Bacc_en">
+    <mu name="enter">Sound/BACC_EN/1.mp3</mu>
+    <mu name="betstart">Sound/BACC_EN/2.mp3</mu>
+    <mu name="betsuccess">Sound/BACC_EN/3.mp3</mu>
+    <mu name="betstop">Sound/BACC_EN/4.mp3</mu>
+    <mu name="win">
+      <add name="100">Sound/BACC_EN/5.mp3</add>
+      <add name="200">Sound/BACC_EN/6.mp3</add>
+      <add name="000">Sound/BACC_EN/7.mp3</add>
+      <add name="110">Sound/BACC_EN/8.mp3</add>
+      <add name="101">Sound/BACC_EN/9.mp3</add>
+      <add name="111">Sound/BACC_EN/10.mp3</add>
+      <add name="210">Sound/BACC_EN/11.mp3</add>
+      <add name="201">Sound/BACC_EN/12.mp3</add>
+      <add name="211">Sound/BACC_EN/13.mp3</add>
+      <add name="010">Sound/BACC_EN/14.mp3</add>
+      <add name="001">Sound/BACC_EN/15.mp3</add>
+      <add name="011">Sound/BACC_EN/16.mp3</add>
+    </mu>
+    <mu name="resoult">
+      <add name="11">Sound/BACC_EN/17.mp3</add>
+      <add name="12">Sound/BACC_EN/18.mp3</add>
+      <add name="13">Sound/BACC_EN/19.mp3</add>
+      <add name="14">Sound/BACC_EN/20.mp3</add>
+      <add name="15">Sound/BACC_EN/21.mp3</add>
+      <add name="16">Sound/BACC_EN/22.mp3</add>
+      <add name="17">Sound/BACC_EN/23.mp3</add>
+      <add name="18">Sound/BACC_EN/24.mp3</add>
+      <add name="19">Sound/BACC_EN/25.mp3</add>
+      <add name="10">Sound/BACC_EN/26.mp3</add>
+      <add name="21">Sound/BACC_EN/27.mp3</add>
+      <add name="22">Sound/BACC_EN/28.mp3</add>
+      <add name="23">Sound/BACC_EN/29.mp3</add>
+      <add name="24">Sound/BACC_EN/30.mp3</add>
+      <add name="25">Sound/BACC_EN/31.mp3</add>
+      <add name="26">Sound/BACC_EN/32.mp3</add>
+      <add name="27">Sound/BACC_EN/33.mp3</add>
+      <add name="28">Sound/BACC_EN/34.mp3</add>
+      <add name="29">Sound/BACC_EN/35.mp3</add>
+      <add name="20">Sound/BACC_EN/36.mp3</add>
+    </mu>
+    <mu name="changeboot">Sound/BACC_EN/37.mp3</mu>
+    <mu name="changetable">Sound/BACC_EN/38.mp3</mu>
+    <mu name="balance">Sound/BACC_EN/39.mp3</mu>
+    <mu name="thanks">Sound/BACC_EN/40.mp3</mu>
+    <mu name="nobet">Sound/BACC_EN/41.mp3</mu>
+    <mu name="sitdown">
+      <add name="1">Sound/BACC_EN/42.mp3</add>
+      <add name="2">Sound/BACC_EN/43.mp3</add>
+      <add name="3">Sound/BACC_EN/44.mp3</add>
+      <add name="4">Sound/BACC_EN/45.mp3</add>
+      <add name="5">Sound/BACC_EN/46.mp3</add>
+      <add name="6">Sound/BACC_EN/47.mp3</add>
+      <add name="7">Sound/BACC_EN/48.mp3</add>
+    </mu>
+  </song>
+</music>

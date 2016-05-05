@@ -1,0 +1,22 @@
+<div class="game-betposbtn row row-wrap">
+	<button id="repeat"  ng-disabled="!serverdata.posSet.repeat" class="col col-25 btnbgunable" on-touch="RepeatBet()" >
+		<img ng-src="img/game/btn/repeat.png" alt="" class="btnimg" ng-class="{'unopacitydata':!serverdata.posSet.repeat}" />
+		<span class="btntextbg" ng-class="{'unopacitydata':!serverdata.posSet.repeat}">{{language.Game[2]}}</span>
+
+	</button>
+	<button id="back"  ng-disabled="!serverdata.posSet.back" class=" col col-25 btnbgunable" on-touch="BackBet()" >
+		<img ng-src="img/game/btn/back.png" alt="" class="btnimg" ng-class="{'unopacitydata':!serverdata.posSet.back}" />
+		<span class="btntextbg" ng-class="{'unopacitydata':!serverdata.posSet.back}">{{language.Game[3]}}</span>
+
+	</button>
+	<button  id="cancel" ng-disabled="!serverdata.posSet.cancel" class=" col col-25 btnbgunable" on-touch="CancelBet()" >
+		<img ng-src="img/game/btn/cancel.png" alt="" class="btnimg" ng-class="{'unopacitydata':!serverdata.posSet.cancel}" />
+		<span class="btntextbg" ng-class="{'unopacitydata':!serverdata.posSet.cancel}">{{language.Game[4]}}</span>
+
+	</button>
+	<button id="confirm"  ng-disabled="!serverdata.posSet.confirm" class="col col-25 btnbgunable" on-touch="ConfirmBet()" >
+		<img ng-src="img/game/btn/confirm.png" alt="" class="btnimg" ng-class="{'unopacitydata':!serverdata.posSet.confirm}" />
+		<span class="btntextbg" ng-class="{'unopacitydata':!serverdata.posSet.confirm}">{{language.Game[5]}}</span>
+
+	</button>
+</div>

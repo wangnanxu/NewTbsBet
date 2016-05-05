@@ -1,0 +1,26 @@
+<ion-modal-view>
+	<ion-content class="lobby-bg">
+		<div class="lobby-title">
+			<button class="button button-clear " ng-click="GoBackLobby()">
+			<img ng-src="img/login/back.png" alt="Back" class="lobby-backimg" />
+		</button>
+			<div class="lobby-info">
+				<img ng-src="img/login/user.png" class="lobby-userimg" />
+				<span>{{topdata.name}}</span>
+				<img ng-src="img/login/balance.png" class="lobby-moneyimg" />
+				<span>{{topdata.blance|currency:''}}</span>
+			</div>
+		</div>
+		<div class="limit-div">
+			<div>
+				<img ng-src="img/login/{{enterTable.game}}title.png" alt="" />
+				<span class="limit-tableName">{{TableName}}</span>
+			</div>
+			<div ng-repeat="limit in enterTable.limit track by $index">
+				<button class="button limit-btn" ng-click="EnterGame({{limit}},{{enterTable.table.TableID}})">
+				<span>{{limit[1]}}</span>
+			</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

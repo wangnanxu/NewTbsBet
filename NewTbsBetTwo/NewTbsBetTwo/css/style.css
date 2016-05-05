@@ -1,0 +1,39 @@
+
+.limitpop{
+	position: absolute;
+    background-color: #343434;
+    width: 60%;
+    margin: 30% 0;
+}
+.limitpop div{
+	opacity: 1;
+	margin-bottom: 0px;
+}
+.limitpop a{
+	font-size: 40px;
+	text-align: center;
+}
+.chipModal{
+	background-color:#343434;
+	text-align: center;
+}
+.chipModal img{
+	width: 3rem;
+    vertical-align: middle;
+}
+.player-button {
+	position: absolute;
+	display: block;
+	top: 10px;
+    right: 54px;
+	width: 36px;
+	height: 36px;
+	background-image: url(http://statics.xiumi.us/stc/images/music.png);
+	background-size: 72px 36px;
+	background-position: 0 0;
+	background-repeat: no-repeat
+}
+.player-stop-button{
+	background-position: -36px 0;
+}
+

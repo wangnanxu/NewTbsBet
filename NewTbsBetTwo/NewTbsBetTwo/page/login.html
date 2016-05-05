@@ -1,0 +1,24 @@
+<ion-view>
+	<ion-content class="login-bg" scroll=true ng-show="false">
+		<root-Message ></root-Message>
+		<div class="login-lang">
+			<button class="button button-clear" ng-click="ShowLangList($event)" class="login-langbtn">
+				<img ng-src="{{lang.src}}" alt="img/login/CH.png" class="login-langimg"/>
+			</button>
+		</div>
+		<form name="loginForm" ng-submit="DoLogin()">
+			<div class="login-logodiv">
+				<img ng-src="img/login/logo.png" alt="img/login/logo.png" class="login-logoimg" />
+		
+				<div class="login-item">
+					<input type="text" name="name" ng-model="loginData.name" placeholder="{{language.Login.UserName}}" required>
+				</div>
+				<div class="login-item">
+					<input type="password" name="pwd" ng-model="loginData.pwd" placeholder="{{language.Login.Password}}" required>
+				</div>
+				<button class="button login-btn" type="submit" ng-disabled="!loginData.name || !loginData.pwd">{{language.Login.LoginBtn}}</button>
+			</div>
+		</form>
+
+	</ion-content>
+</ion-view>

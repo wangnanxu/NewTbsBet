@@ -1,0 +1,362 @@
+
+.roulcanvas{
+	position: absolute;
+	width: 328px;
+	height: 224px;
+}
+
+#Roul_video {
+	background-color: #1A2F3C;
+	width: 328px;
+	height: 224px;
+	margin: 5px auto;
+}
+
+.roul-time {
+	top: 176px;
+}
+
+#RoulRoad {
+	margin: 5px 0px;
+	padding: 0px;
+}
+
+.roul-road {
+	height: 5rem;
+}
+
+.roul-road .row,
+.roul-road .col {
+	margin: 0px;
+	padding: 0px;
+}
+
+.roul-roadbg {
+	position: relative;
+}
+
+.roul-roadbg img {
+	position: absolute;
+	width: 100%;
+	height: 5rem;
+}
+
+.roul-road .row,
+.roul-road .col {
+	margin: 0px;
+	padding: 0px;
+}
+.roul-road  .roadbtnimg{
+	margin-top: 1rem;
+}
+.roul-road .circeldiv{
+	z-index: 0;
+	text-align: center;
+}
+
+.roul-road .circlebg {
+	display: block;
+	color: #FFFFFF;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 1.5rem;
+}
+
+.roul-road .redbg {
+	background: -webkit-linear-gradient(#2f0000, #ff0000);
+	background: -moz-linear-gradient(#2f0000, #ff0000);
+	background: -o-linear-gradient(#2f0000, #ff0000);
+	background: linear-gradient(#2f0000, #ff0000);
+	margin-top: 3.2rem;
+}
+.roul-road .greenbg {
+	background: -webkit-linear-gradient(#003a05, #39B54A);
+	background: -moz-linear-gradient(#003a05, #39B54A);
+	background: -o-linear-gradient(#003a05, #39B54A);
+	background: linear-gradient(#003a05, #39B54A);
+	margin-top: 1.7rem;
+}
+.roul-road .blackbg {
+	background: -webkit-linear-gradient(#0f1417, #214253);
+	background: -moz-linear-gradient(#0f1417, #214253);
+	background: -o-linear-gradient(#0f1417, #214253);
+	background: linear-gradient(#0f1417, #214253);
+	margin-top: 0.2rem;
+}
+
+.roul-pane {
+	position: absolute;
+	width: 100%;
+	animation: hidepane 1s linear;
+	-webkit-animation: hidepane 1s linear;
+	-moz-animation: hidepane 1s linear;
+}
+
+@keyframes hidepane {
+	/*0%{
+		top: 70px;
+	}
+	100%{
+		top: 394px;
+	}*/
+}
+
+@-webkit-keyframes hidepane {
+	/*0% {
+		top: 70px;
+	}
+	100%{
+		top: 394px;
+	}*/
+}
+
+@-moz-keyframes hidepane {
+	/*0%{
+		top: 70px;
+	}
+	100%{
+		top: 394px;
+	}*/
+}
+
+.roul-showpane {
+	position: absolute;
+	width: 100%;
+	animation: showpane 1s linear;
+	-webkit-animation: showpane 1s linear;
+	-moz-animation: showpane 1s linear;
+	z-index: 0;
+}
+
+@keyframes showpane {
+	/*0% {
+		top: 394px;
+	}
+	100%{
+		top: 70px;
+	}*/
+}
+
+@-webkit-keyframes showpane {
+	/*0% {
+		top: 394px;
+	}
+	100%{
+		top: 70px;
+	}*/
+}
+
+@-moz-keyframes showpane {
+	/*0% {
+		top: 394px;
+	}
+	100%{
+		top: 70px;
+	}*/
+}
+
+.roul-pos {
+	width: 96%;
+	margin-left: 2%;
+}
+
+.roul-posPane {
+	background: #244453;
+	opacity: 0.6;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+.roul-panebtn{
+	width:100%;
+	background-color: #4D4D4D;
+    padding: 0px;
+    margin: 0px;
+    min-height: 1rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    border-width: 0px;
+}
+
+.roul-pos .row,
+.roul-pos .col {
+	margin: 0px;
+	padding: 0px;
+}
+
+.roul-pos a {
+	position: relative;
+	text-align: center;
+	display: block;
+	border: 1px solid #999999;
+	color: #FFFFFF;
+}
+
+.roul-pos .greenbg {
+	width: 100%;
+	height: 30px;
+	background-color: #008000;
+	color: #FFFFFF;
+	line-height: 30px;
+}
+
+.roul-pos .redbg {
+	width: 100%;
+	height: 30px;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	line-height: 30px;
+}
+
+.roul-pos .blackbg {
+	width: 100%;
+	height: 30px;
+	background-color: #000000;
+	color: #FFFFFF;
+	line-height: 30px;
+}
+
+.roul-pos .other {
+	width: 100%;
+	height: 60px;
+	color: #FFFFFF;
+	line-height: 60px;
+}
+
+.roul-pos .da {
+	width: 100%;
+	height: 120px;
+	color: #FFFFFF;
+	line-height: 120px;
+}
+
+.roul-pos .lie {
+	width: 100%;
+	height: 30px;
+	color: #FFFFFF;
+	line-height: 30px;
+}
+.roul-pos .bet{
+	position: absolute;
+    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    left: 20%;
+    z-index: 333;
+    background: url("../img/game/bacc/betbg.png") 0 0 no-repeat;
+    background-size: contain;
+    color: #524620;
+    font-size: 0.6rem;
+}
+
+.roul-bootom {
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
+}
+.roul-posbg{
+	width: 98%;
+    height: 28rem;
+    position: absolute;
+    z-index: -1;
+}
+.roul-posmoney{
+	position: absolute;
+	z-index: -1;
+}
+.roul-posbet .bet{
+	position: relative;
+}
+.roul-posbet .betmoney{
+	position: absolute;
+    line-height: 50px;
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    left: 20%;
+    z-index: 333;
+    background: url("../img/game/bacc/betbg.png") 0 0 no-repeat;
+    background-size: contain;
+    color: #524620;
+    font-size: 0.6rem;
+}
+.roul-posbet{
+	width: 99%;
+	margin: 0px;
+	padding: 0px;
+}
+.roul-posbet .col,.roul-posbet .row{
+	margin: 0px;
+	padding: 0px;
+}
+.roul-posbet a{
+	position: relative;
+	text-align: center;
+	display: block;
+	color: #FFFFFF;
+}
+.roul-posbet .betmaxheight,.roul-posmoney .betmaxheight{
+	height: 1.4rem;
+}
+.roul-posbet .betminheight,.roul-posmoney .betminheight{
+	height: 0.6rem;
+}
+.roul-posbet .bet .betmoney{
+	position: absolute;
+	line-height: 2rem;
+    width: 2rem;
+    height: 2rem;
+    z-index: 333;
+    background: url("../img/game/bacc/betbg.png") 0 0 no-repeat;
+    background-size: contain;
+    color: #524620;
+    text-align: center;
+    font-size: 0.6rem;
+}
+.roul-maxwidth .dabet .betmoney,.roul-maxwidth .otherbet .betmoney{
+	
+    left: 33%;
+    top:30%;
+  
+}
+.roul-maxwidth .betmaxheight .betmoney,.roul-maxwidth .liebet .betmoney{
+	
+    left: 26%;
+    top:-20%;
+   
+}
+
+.roul-maxwidth .betminheight .betmoney{
+	
+    top: -0.6rem;
+    left: 33%;
+   
+}
+.roul-minwidth .betminheight .betmoney{
+	
+    top: -0.6rem;
+    left: -0.6rem;
+   
+}
+.roul-minwidth .betmaxheight .betmoney{
+	left: -0.6rem;
+}
+.roul-posbet .dabet,.roul-posmoney .dabet{
+	height:8rem;
+}
+.roul-posbet .liebet,.roul-posmoney .liebet{
+	height:2rem;
+}
+.roul-posbet .otherbet,.roul-posmoney .otherbet{
+	height:4rem;
+}
+.roul-otherdiv{
+	margin-top: 1.4rem;
+}
+.roul-thsixdiv{
+	margin-top: 0.6rem;
+}

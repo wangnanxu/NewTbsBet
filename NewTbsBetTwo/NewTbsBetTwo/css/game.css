@@ -1,0 +1,85 @@
+.bacc-pk{
+	margin: 0px;
+    padding: 0px;
+    border-bottom: solid 5px #cccccc;
+    border-top: solid 5px #cccccc;
+    background: -webkit-linear-gradient( top,#000,#244453);
+    background: linear-gradient( top,#000,#244453);
+    background: -moz-linear-gradient( top,#000,#244453);
+}
+.bacc-pk .row,.bacc-pk .col{
+	margin: 0px;
+	padding:0px;
+}
+.bacc-pkresultimg{
+	width: 100%;
+}
+.bacc-pos{
+	/*background-color:#244453;*/
+}
+.bacc-pos .row{
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+}
+.bacc-pos .col{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+.bacc-pos .pos{
+	position: relative;
+	border: 1px solid #29ABE2;
+}
+.bacc-bigfont{
+	font-size: 1.2rem;
+}
+.bacc-smallfont{
+	font-size: 1rem;
+}
+.bacc-blue{
+	  color:#29ABE2;
+}
+.bacc-green{
+	color: #39B54A;
+}
+.bacc-red {
+	color: #FF0000;
+}
+.bacc-pos .pos{
+	padding: 4% 11%;
+}
+.bacc-pos .posb{
+	position: relative;
+	padding: 4% 0;
+} 
+.bacc-pos .bet{
+	position: absolute;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    left: 20%;
+    z-index: 333;
+    background: url("../img/game/bacc/betbg.png") 0 0 no-repeat;
+    background-size: contain;
+    color: #524620;
+    font-size: 0.6rem;
+}
+.bacc-pos .back{
+	line-height: 2rem;
+}
+.bacc-pos .col-33{
+	text-align: center;
+	border: 1px solid #29ABE2;
+}
+.bacc-pos a:active{
+	background-color: #286177;
+}
+.bacc-pos span{
+	display: block;
+    font-weight: bolder;
+}
+.inbacc-pos{
+	border: 1px solid #29ABE2;
+}

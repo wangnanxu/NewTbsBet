@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<music>
+	<song name="1">Sound/BG_Music/music1.mp3</song>
+	<song name="2">Sound/BG_Music/music2.mp3</song>
+	<song name="3">Sound/BG_Music/music3.mp3</song>
+	<song name="4">Sound/BG_Music/music4.mp3</song>
+</music>

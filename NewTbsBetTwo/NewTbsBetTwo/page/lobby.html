@@ -1,0 +1,30 @@
+<ion-view>
+	<ion-content class="lobby-bg">
+		<root-Message ></root-Message>
+		<div class="lobby-title">
+			<button class="button button-clear " ng-click="ExitToLogin()">
+				<img ng-src="img/login/back.png" alt="Back" class="lobby-backimg" />
+			</button>
+			<div class="lobby-info">
+				<img ng-src="img/login/user.png" class="lobby-userimg" />
+				<span class="spaninline">{{topdata.name}}</span>
+				<img ng-src="img/login/balance.png" class="lobby-moneyimg" />
+				<span class="spaninline">{{topdata.blance|currency:''}}</span>
+			</div>
+			<div ng-if="!isIos" class="lobby-audiobtn" ng-click="TagVolume()" ng-class="{'player-stop-button':isStopPlay}">
+			</div>
+		</div>
+		<div class="lobby-tables">
+			<ion-slide-box class="lobby-room" ng-if="servdata.tablearr">
+				<ion-slide ng-repeat="tables in servdata.tablearr track by $index">
+					<div class="row row-wrap">
+						<div ng-repeat="table in tables track by table.tableID" class="col col-50"  ng-click="ShowLimit($parent.$index,$index,$event)" >
+							<table-Info data='table'></table-Info>
+						</div>
+					</div>
+				</ion-slide>
+			</ion-slide-box>
+		</div>
+		
+	</ion-content>
+</ion-view>

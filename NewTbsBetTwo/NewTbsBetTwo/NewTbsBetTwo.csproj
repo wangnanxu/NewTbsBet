@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EACF3713-B51B-41B3-8591-59862C487870}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewTbsBetTwo</RootNamespace>
+    <AssemblyName>NewTbsBetTwo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonFunction">
+      <HintPath>..\..\..\..\MobileCasino\login\login\bin\CommonFunction.dll</HintPath>
+    </Reference>
+    <Reference Include="FluorineFx">
+      <HintPath>..\..\..\..\ML.NetComponent\dll\FluorineFx.dll</HintPath>
+    </Reference>
+    <Reference Include="LeLog4net">
+      <HintPath>..\packages\le_log4net_previous.2.3.7\lib\4.0\LeLog4net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\cicrle.css" />
+    <Content Include="css\game.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\game\bacc\infobg.png" />
+    <Content Include="img\game\bacc\pkbgone.png" />
+    <Content Include="img\game\bacc\pkresult.png" />
+    <Content Include="img\game\bacc\roadbg.png" />
+    <Content Include="img\game\bacc\roadbtn.png" />
+    <Content Include="img\game\bacc\roadtitlebg.png" />
+    <Content Include="img\game\bacc\road\bigTableView\one.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tieeight.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tiefive.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tiefour.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tienine.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tieseven.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tiesix.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tiethree.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tietwo.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tiezero.png" />
+    <Content Include="img\game\btnbg.png" />
+    <Content Include="img\game\btn\back.png" />
+    <Content Include="img\game\btn\backable.png" />
+    <Content Include="img\game\btn\cancel.png" />
+    <Content Include="img\game\btn\cancelable.png" />
+    <Content Include="img\game\btn\confirm.png" />
+    <Content Include="img\game\btn\confirmable.png" />
+    <Content Include="img\game\btn\repeat.png" />
+    <Content Include="img\game\btn\repeatable.png" />
+    <Content Include="img\game\chipSelect\1.png" />
+    <Content Include="img\game\chipSelect\10.png" />
+    <Content Include="img\game\chipSelect\100.png" />
+    <Content Include="img\game\chipSelect\1000.png" />
+    <Content Include="img\game\chipSelect\10000.png" />
+    <Content Include="img\game\chipSelect\100000.png" />
+    <Content Include="img\game\chipSelect\1000000.png" />
+    <Content Include="img\game\chipSelect\10000000.png" />
+    <Content Include="img\game\chipSelect\100000000.png" />
+    <Content Include="img\game\chipSelect\100000000select.png" />
+    <Content Include="img\game\chipSelect\10000000select.png" />
+    <Content Include="img\game\chipSelect\1000000select.png" />
+    <Content Include="img\game\chipSelect\100000select.png" />
+    <Content Include="img\game\chipSelect\10000select.png" />
+    <Content Include="img\game\chipSelect\1000select.png" />
+    <Content Include="img\game\chipSelect\100select.png" />
+    <Content Include="img\game\chipSelect\10select.png" />
+    <Content Include="img\game\chipSelect\1select.png" />
+    <Content Include="img\game\chipSelect\20000000select.png" />
+    <Content Include="img\game\chipSelect\2000000select.png" />
+    <Content Include="img\game\chipSelect\200000select.png" />
+    <Content Include="img\game\chipSelect\20000select.png" />
+    <Content Include="img\game\chipSelect\20select.png" />
+    <Content Include="img\game\chipSelect\50000000select.png" />
+    <Content Include="img\game\chipSelect\5000000select.png" />
+    <Content Include="img\game\chipSelect\500000select.png" />
+    <Content Include="img\game\chipSelect\50000select.png" />
+    <Content Include="img\game\chipSelect\5000select.png" />
+    <Content Include="img\game\chipSelect\500select.png" />
+    <Content Include="img\game\chipSelect\50select.png" />
+    <Content Include="img\game\chipSelect\5select.png" />
+    <Content Include="img\game\chipSelect\bg.png" />
+    <Content Include="img\game\chipSelect\left.png" />
+    <Content Include="img\game\chipSelect\right.png" />
+    <Content Include="img\game\chipSelect\selectbg.png" />
+    <Content Include="img\game\dragon\dragonpos.png" />
+    <Content Include="img\game\dragon\tigerpos.png" />
+    <Content Include="img\game\pk\allpk原稿.png" />
+    <Content Include="img\game\roul\panebtn.png" />
+    <Content Include="img\game\roul\posbg.png" />
+    <Content Include="img\game\roul\posbg原稿.png" />
+    <Content Include="img\game\roul\roadbg.png" />
+    <Content Include="img\game\roul\roadbg原稿.png" />
+    <Content Include="img\login\bacc.png" />
+    <Content Include="img\login\bacctitle.png" />
+    <Content Include="img\login\back.png" />
+    <Content Include="img\login\backon.png" />
+    <Content Include="img\login\balance.png" />
+    <Content Include="img\login\bg.png" />
+    <Content Include="img\login\CH.png" />
+    <Content Include="img\login\dragon.png" />
+    <Content Include="img\login\dragontitle.png" />
+    <Content Include="img\login\EN.png" />
+    <Content Include="img\login\headbg.png" />
+    <Content Include="img\login\JP.png" />
+    <Content Include="img\login\lobbybg.png" />
+    <Content Include="img\login\loginbtn.png" />
+    <Content Include="img\login\logo.png" />
+    <Content Include="img\login\ML.png" />
+    <Content Include="img\login\outtime.png" />
+    <Content Include="img\login\roul.png" />
+    <Content Include="img\login\roultitle.png" />
+    <Content Include="img\login\TW.png" />
+    <Content Include="img\login\user.png" />
+    <Content Include="img\login\YL.png" />
+    <Content Include="img\login\原稿\bg原稿.png" />
+    <Content Include="img\login\原稿\lobbybg原稿.png" />
+    <Content Include="libs\ionic\fonts\ionicons.eot" />
+    <Content Include="libs\ionic\fonts\ionicons.svg" />
+    <Content Include="libs\ionic\fonts\ionicons.ttf" />
+    <Content Include="libs\ionic\fonts\ionicons.woff" />
+    <Content Include="libs\ionic\scss\ionic.scss" />
+    <Content Include="libs\ionic\scss\ionicons\ionicons.scss" />
+    <Content Include="libs\ionic\scss\ionicons\_ionicons-font.scss" />
+    <Content Include="libs\ionic\scss\ionicons\_ionicons-icons.scss" />
+    <Content Include="libs\ionic\scss\ionicons\_ionicons-variables.scss" />
+    <Content Include="libs\ionic\scss\_action-sheet.scss" />
+    <Content Include="libs\ionic\scss\_animations.scss" />
+    <Content Include="libs\ionic\scss\_backdrop.scss" />
+    <Content Include="libs\ionic\scss\_badge.scss" />
+    <Content Include="libs\ionic\scss\_bar.scss" />
+    <Content Include="libs\ionic\scss\_button-bar.scss" />
+    <Content Include="libs\ionic\scss\_button.scss" />
+    <Content Include="libs\ionic\scss\_checkbox.scss" />
+    <Content Include="libs\ionic\scss\_form.scss" />
+    <Content Include="libs\ionic\scss\_grid.scss" />
+    <Content Include="libs\ionic\scss\_items.scss" />
+    <Content Include="libs\ionic\scss\_list.scss" />
+    <Content Include="libs\ionic\scss\_loading.scss" />
+    <Content Include="libs\ionic\scss\_menu.scss" />
+    <Content Include="libs\ionic\scss\_mixins.scss" />
+    <Content Include="libs\ionic\scss\_modal.scss" />
+    <Content Include="libs\ionic\scss\_platform.scss" />
+    <Content Include="libs\ionic\scss\_popover.scss" />
+    <Content Include="libs\ionic\scss\_popup.scss" />
+    <Content Include="libs\ionic\scss\_progress.scss" />
+    <Content Include="libs\ionic\scss\_radio.scss" />
+    <Content Include="libs\ionic\scss\_range.scss" />
+    <Content Include="libs\ionic\scss\_refresher.scss" />
+    <Content Include="libs\ionic\scss\_reset.scss" />
+    <Content Include="libs\ionic\scss\_scaffolding.scss" />
+    <Content Include="libs\ionic\scss\_select.scss" />
+    <Content Include="libs\ionic\scss\_slide-box.scss" />
+    <Content Include="libs\ionic\scss\_slides.scss" />
+    <Content Include="libs\ionic\scss\_spinner.scss" />
+    <Content Include="libs\ionic\scss\_tabs.scss" />
+    <Content Include="libs\ionic\scss\_toggle.scss" />
+    <Content Include="libs\ionic\scss\_transitions.scss" />
+    <Content Include="libs\ionic\scss\_type.scss" />
+    <Content Include="libs\ionic\scss\_util.scss" />
+    <Content Include="libs\ionic\scss\_variables.scss" />
+    <Content Include="libs\ionic\version.json" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="log4net.config" />
+    <Content Include="img\game\chipSelect\OGLdpf.log" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bacc.css" />
+    <Content Include="css\dragon.css" />
+    <Content Include="css\lobby.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\pk.css" />
+    <Content Include="css\roul.css" />
+    <Content Include="css\style.css" />
+    <Content Include="img\game\bacc\betbg.png" />
+    <Content Include="img\game\bacc\road\bigEyeTableView\blue.png" />
+    <Content Include="img\game\bacc\road\bigEyeTableView\red.png" />
+    <Content Include="img\game\bacc\road\bigTableView\banker.png" />
+    <Content Include="img\game\bacc\road\bigTableView\player.png" />
+    <Content Include="img\game\bacc\road\bigTableView\tie.png" />
+    <Content Include="img\game\bacc\road\smallForcedTableView\blue.png" />
+    <Content Include="img\game\bacc\road\smallForcedTableView\red.png" />
+    <Content Include="img\game\bacc\road\smallTableView\blue.png" />
+    <Content Include="img\game\bacc\road\smallTableView\red.png" />
+    <Content Include="img\game\bacc\road\tableView\banker.png" />
+    <Content Include="img\game\bacc\road\tableView\bankerb.png" />
+    <Content Include="img\game\bacc\road\tableView\bankerbp.png" />
+    <Content Include="img\game\bacc\road\tableView\bankerp.png" />
+    <Content Include="img\game\bacc\road\tableView\player.png" />
+    <Content Include="img\game\bacc\road\tableView\playerb.png" />
+    <Content Include="img\game\bacc\road\tableView\playerbp.png" />
+    <Content Include="img\game\bacc\road\tableView\playerp.png" />
+    <Content Include="img\game\bacc\road\tableView\tie.png" />
+    <Content Include="img\game\bacc\road\tableView\tieb.png" />
+    <Content Include="img\game\bacc\road\tableView\tiebp.png" />
+    <Content Include="img\game\bacc\road\tableView\tiep.png" />
+    <Content Include="img\game\border.png" />
+    <Content Include="img\game\chipSelect\20.png" />
+    <Content Include="img\game\chipSelect\20000.png" />
+    <Content Include="img\game\chipSelect\200000.png" />
+    <Content Include="img\game\chipSelect\2000000.png" />
+    <Content Include="img\game\chipSelect\20000000.png" />
+    <Content Include="img\game\chipSelect\5.png" />
+    <Content Include="img\game\chipSelect\50.png" />
+    <Content Include="img\game\chipSelect\500.png" />
+    <Content Include="img\game\chipSelect\5000.png" />
+    <Content Include="img\game\chipSelect\50000.png" />
+    <Content Include="img\game\chipSelect\500000.png" />
+    <Content Include="img\game\chipSelect\5000000.png" />
+    <Content Include="img\game\chipSelect\50000000.png" />
+    <Content Include="img\game\dragon\dragon.png" />
+    <Content Include="img\game\dragon\tiger.png" />
+    <Content Include="img\game\pk\allpk.png" />
+    <Content Include="img\game\roul\0.png" />
+    <Content Include="img\game\roul\1.png" />
+    <Content Include="img\game\roul\10.png" />
+    <Content Include="img\game\roul\11.png" />
+    <Content Include="img\game\roul\12.png" />
+    <Content Include="img\game\roul\13.png" />
+    <Content Include="img\game\roul\14.png" />
+    <Content Include="img\game\roul\15.png" />
+    <Content Include="img\game\roul\16.png" />
+    <Content Include="img\game\roul\17.png" />
+    <Content Include="img\game\roul\18.png" />
+    <Content Include="img\game\roul\19.png" />
+    <Content Include="img\game\roul\2.png" />
+    <Content Include="img\game\roul\20.png" />
+    <Content Include="img\game\roul\21.png" />
+    <Content Include="img\game\roul\22.png" />
+    <Content Include="img\game\roul\23.png" />
+    <Content Include="img\game\roul\24.png" />
+    <Content Include="img\game\roul\25.png" />
+    <Content Include="img\game\roul\26.png" />
+    <Content Include="img\game\roul\27.png" />
+    <Content Include="img\game\roul\28.png" />
+    <Content Include="img\game\roul\29.png" />
+    <Content Include="img\game\roul\3.png" />
+    <Content Include="img\game\roul\30.png" />
+    <Content Include="img\game\roul\31.png" />
+    <Content Include="img\game\roul\32.png" />
+    <Content Include="img\game\roul\33.png" />
+    <Content Include="img\game\roul\34.png" />
+    <Content Include="img\game\roul\35.png" />
+    <Content Include="img\game\roul\36.png" />
+    <Content Include="img\game\roul\4.png" />
+    <Content Include="img\game\roul\5.png" />
+    <Content Include="img\game\roul\6.png" />
+    <Content Include="img\game\roul\7.png" />
+    <Content Include="img\game\roul\8.png" />
+    <Content Include="img\game\roul\9.png" />
+    <Content Include="img\lobby\head.png" />
+    <Content Include="img\lobby\money.png" />
+    <Content Include="index.html" />
+    <Content Include="libs\ionic\css\ionic.css" />
+    <Content Include="libs\ionic\css\ionic.min.css" />
+    <Content Include="libs\ionic\js\angular-ui\angular-ui-router.js" />
+    <Content Include="libs\ionic\js\angular-ui\angular-ui-router.min.js" />
+    <Content Include="libs\ionic\js\angular\angular-animate.js" />
+    <Content Include="libs\ionic\js\angular\angular-animate.min.js" />
+    <Content Include="libs\ionic\js\angular\angular-resource.js" />
+    <Content Include="libs\ionic\js\angular\angular-resource.min.js" />
+    <Content Include="libs\ionic\js\angular\angular-sanitize.js" />
+    <Content Include="libs\ionic\js\angular\angular-sanitize.min.js" />
+    <Content Include="libs\ionic\js\angular\angular.js" />
+    <Content Include="libs\ionic\js\angular\angular.min.js" />
+    <Content Include="libs\ionic\js\ionic-angular.js" />
+    <Content Include="libs\ionic\js\ionic-angular.min.js" />
+    <Content Include="libs\ionic\js\ionic.bundle.js" />
+    <Content Include="libs\ionic\js\ionic.bundle.min.js" />
+    <Content Include="libs\ionic\js\ionic.js" />
+    <Content Include="libs\ionic\js\ionic.min.js" />
+    <Content Include="page\bacc.html" />
+    <Content Include="page\dirtective\betposbtn.html" />
+    <Content Include="page\dirtective\gametitle.html" />
+    <Content Include="page\dirtective\infobottom.html" />
+    <Content Include="page\dirtective\rootmessage.html" />
+    <Content Include="page\dirtective\selectChips.html" />
+    <Content Include="page\dirtective\table.html" />
+    <Content Include="page\dragon.html" />
+    <Content Include="page\gamepop.html" />
+    <Content Include="page\inbacc.html" />
+    <Content Include="page\info.html" />
+    <Content Include="page\language.html" />
+    <Content Include="page\limitpop.html" />
+    <Content Include="page\lobby.html" />
+    <Content Include="page\login.html" />
+    <Content Include="page\roulette.html" />
+    <Content Include="page\settingModel.html" />
+    <Content Include="page\statement.html" />
+    <Content Include="page\tabs.html" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\comm\cmd\command.js" />
+    <Content Include="Scripts\comm\comm.js" />
+    <Content Include="Scripts\comm\commFun.js" />
+    <Content Include="Scripts\comm\language\language.js" />
+    <Content Include="Scripts\comm\limitServ.js" />
+    <Content Include="Scripts\comm\module.js" />
+    <Content Include="Scripts\comm\scoket\clientServ.js" />
+    <Content Include="Scripts\comm\scoket\scoketServ.js" />
+    <Content Include="Scripts\game\baccarat\baccCtrl.js" />
+    <Content Include="Scripts\game\baccarat\baccServ.js" />
+    <Content Include="Scripts\game\chipSelect\chipSelectManager.js" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\game\comm\gameCommFun.js" />
+    <Content Include="Scripts\game\comm\gameReciveServ.js" />
+    <Content Include="Scripts\game\comm\gameSendServ.js" />
+    <Content Include="Scripts\game\comm\jsmpg.js" />
+    <Content Include="Scripts\game\dragonTiger\dragonCtrl.js" />
+    <Content Include="Scripts\game\dragonTiger\dragonServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccBigEyeTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccBigEyeViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccBigTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccBigViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccHistoryManager.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccHistoryManagerForLobby.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccSmallForcedTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccSmallForcedViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccSmallTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccSmallViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\baccViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\CanvasServ.js" />
+    <Content Include="Scripts\game\historyRoad\baccAndDragon\historyRoad.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\bigSmallTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\bigSmallViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\evenOldTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\evenOldViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\redBlackTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\redBlackViewServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\roulHistoryManager.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\roulHistoryManagerForLobby.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\roulroad.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\RoulTableServ.js" />
+    <Content Include="Scripts\game\historyRoad\roulHistoryRoad\RoulViewServ.js" />
+    <Content Include="Scripts\game\inbaccarat\inbaccCtrl.js" />
+    <Content Include="Scripts\game\inbaccarat\inbaccServ.js" />
+    <Content Include="Scripts\game\roulette\roulCtrl.js" />
+    <Content Include="Scripts\game\roulette\roulServ.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\lobby\lobbyCtrl.js" />
+    <Content Include="Scripts\lobby\lobbyServ.js" />
+    <Content Include="Scripts\login\loginCtrl.js" />
+    <Content Include="Scripts\setting\settingCtrl.js" />
+    <Content Include="Scripts\statement\statementCtrl.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigSingleton.cs" />
+    <Compile Include="GameScoket.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ISignalr.cs" />
+    <Compile Include="ISignalrPusher.cs" />
+    <Compile Include="Linker.cs" />
+    <Compile Include="LobbyScoket.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoketLinker.cs" />
+    <Compile Include="SendMessage.cs" />
+    <Compile Include="SignalrContains.cs" />
+    <Compile Include="SignalrControl.cs" />
+    <Compile Include="SignalrPusher.cs" />
+    <Compile Include="SignalrPusherHub.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Tcp\ByteArray.cs" />
+    <Compile Include="Tcp\EventSocket.cs" />
+    <Compile Include="Tcp\ScoketClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60574</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60574/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

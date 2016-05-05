@@ -1,0 +1,19 @@
+<div class='game-chipdiv'>
+	<div>
+		<img ng-src="img/game/chipSelect/bg.png" alt="" class="chipbg bgimg" />
+	</div>
+		<button class="button-clear chip-btn zIndex" ng-click="ChipGoLeft()">
+			<img ng-src="img/game/chipSelect/left.png" alt="" />
+		</button>
+	<div class='row row-wrap '>
+		<div ng-repeat='chip in serverdata.chips' class='col col-20 zIndex'>
+			<a  on-touch='ChangeSelect($index)'>
+				<img ng-src='img/game/chipSelect/{{chip.count}}.png' alt='' class='img-chip' ng-if="serverdata.selectchip.index!=$index" />
+				<img ng-src='img/game/chipSelect/{{chip.count}}select.png' alt='' class='img-chip' ng-if="serverdata.selectchip.index==$index" />
+			</a>
+		</div>
+	</div>
+		<button class="button-clear chip-btn zIndex" ng-click="ChipGoRight()">
+			<img ng-src="img/game/chipSelect/right.png" alt="" />
+		</button>
+</div>

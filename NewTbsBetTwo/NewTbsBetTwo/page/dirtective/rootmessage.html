@@ -1,0 +1,12 @@
+<div class="message-div" ng-show="rootmessage.able">
+	<div ng-if="rootmessage.type!='gameStatus' && rootmessage.type!='betMessage'" class="message-divbg">
+	</div>
+	<div class="message-data" ng-class="{'message-maxdata':(rootmessage.type=='exitLogin'),'message-mindata':(rootmessage.type=='gameStatus' || rootmessage.type=='betMessage')}">
+		<button ng-if="rootmessage.type!='gameStatus' && rootmessage.type!='betMessage'" class="button  button-small button-assertive" ng-click="CloseMessage()">{{language.Game[3]}}</button>
+		<div ng-class="{'message-message':(rootmessage.type=='gameStatus' || rootmessage.type=='betMessage')}">
+			<span class="messagespan">{{rootmessage.message}}</span>
+		</div>
+		<button ng-if="rootmessage.type=='exitLogin'" class="button button-small button-balanced rightbtn" ng-click="ConfirmMessage()">{{language.Game[5]}}</button>
+		<button ng-if="rootmessage.type=='netOut'" class="button button-small rightbtn" ng-click="NetOut()">{{language.Game[5]}}</button>
+	</div>
+<div>

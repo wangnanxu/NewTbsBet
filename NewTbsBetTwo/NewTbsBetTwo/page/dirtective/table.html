@@ -1,0 +1,36 @@
+<div class="lobby-table">
+	<div class="Table-imgdiv">
+		<img ng-src="img/login/{{table.game}}.png" alt="Table" class="Table-bgimg" />
+	</div>
+	<div class="Table-name">
+		<span>{{tablename}}</span>
+	</div>
+	<div>
+		<canvas id="{{table.tableID}}" class="Table-canvas"></canvas>
+		<canvas id="{{table.tableName}}" class="Table-canvas"></canvas>
+		<div class="Table-statusdiv row row-wrap">
+			<div class="col col-75">
+				<span class="Table-status spaninline">{{statusText}}</span>
+			</div>
+			<div class="col col-25">
+				<div class="Table-time" ng-show="table.tablestatus==2 && time>=0">
+					<div class="lobby-circleProgress_wrapper">
+							<div class="lobby-wrapper lobby-right">
+								<div id="right{{table.tableID}}" class="lobby-circleProgress lobby-rightcircle"></div>
+							</div>
+							<div class="lobby-wrapper lobby-left">
+								<div id="left{{table.tableID}}" class="lobby-circleProgress lobby-leftcircle"></div>
+							</div>
+						</div>
+					<div class="Table-timedata">
+						{{time}}
+					</div>
+				</div>
+				<div class="Table-time" ng-show="table.tablestatus!=2 || time<0">
+					<img ng-src="img/login/outtime.png" alt="" class="Table-timebg" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

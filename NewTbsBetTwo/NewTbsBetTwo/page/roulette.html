@@ -1,0 +1,1562 @@
+<ion-view>
+	<ion-content class="lobby-bg" scroll=false>
+		<root-Message></root-Message>
+		<ion-scroll id="PaneScroll">
+		<game-Title></game-Title>
+		<div id="Game_video">
+			<div class="bacc-video" ng-show="showvideo">
+				<canvas id="videoCanvas"  width="820" height="480">
+					<p>
+						Please use a browser that supports the Canvas Element, like
+						<a href="http://www.google.com/chrome">Chrome</a>,
+						<a href="http://www.mozilla.com/firefox/">Firefox</a>,
+						<a href="http://www.apple.com/safari/">Safari</a> or Internet Explorer 10
+					</p>
+				</canvas>
+			</div>
+		</div>
+		<div class="game-time">
+				<div class="circleProgress_wrapper" ng-hide="serverdata.table.time<=0 || serverdata.table.status!=2">
+					<div class="wrapper right">
+						<div id="TimeRight" class="circleProgress rightcircle"></div>
+					</div>
+					<div class="wrapper left">
+						<div id="TimeLeft" class="circleProgress leftcircle"></div>
+					</div>
+				</div>
+				<div class="game-timedata" ng-hide="serverdata.table.time<=0 || serverdata.table.status!=2" ng-class="{'game-timedatared':serverdata.table.time<=5}">
+					<span>{{serverdata.table.time}}</span>
+				</div>
+			</div>
+		<div id="RoulRoad" class="roul-road row row-wrap">
+			<div class="col col-10">
+				<a class="button-clear">
+					<img ng-src="img/game/chipSelect/left.png" ng-click="RoadGoLeft()" class="roadbtnimg" />
+				</a>
+			</div>
+			<div class="col col-80">
+				<div class="roul-roadbg">
+					<img ng-src="img/game/roul/roadbg.png" />
+
+				</div>
+				<div class="row row-wrap">
+					<div class="col col-10 circeldiv" ng-repeat="road in serverdata.roads track by $index">
+						<span class="circlebg" ng-class="{'redbg':road.type==1,'greenbg':road.type==2,'blackbg':road.type==3}">{{road.count}}</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="col col-10">
+				<a class="button-clear">
+					<img ng-src="img/game/chipSelect/right.png" ng-click="RoadGoRight()" class="roadbtnimg" />
+				</a>
+			</div>
+		</div>
+		
+		<div id="PaneAll"  ng-class="{'roul-showpane':serverdata.isShowPane,'roul-pane':!serverdata.isShowPane}">
+
+				<div class="roul-posPane"></div>
+				<div>
+					<button class="button button-small roul-panebtn" ng-click="TragetPane()">
+					<img ng-src="img/game/roul/panebtn.png" alt="" class="game-roadbtn" ng-class="{'game-roadbtntran':!serverdata.isShowPane}" />
+				</button>
+				</div>
+			<ion-scroll id="RoulPane">
+				<div>
+					<div>
+						<div>
+							<img ng-src="img/game/roul/posbg.png" class="roul-posbg" />
+						</div>
+						<!--筹码显示层
+                    -->
+						<div class="row row-wrap roul-posbet roul-posmoney ">
+							<div class="col col-20 roul-maxwidth">
+									<div class="bet otherbet roul-otherdiv">
+												<!--1-18-->
+											<div class="betmoney" ng-if="serverdata.bet[144]!=0">
+												<span>{{serverdata.bet[144]}}</span>
+											</div>
+										</div>
+										
+										<div class="bet  otherbet">
+											<!--双-->
+											<div class="betmoney" ng-if="serverdata.bet[149]!=0">
+												<span>{{serverdata.bet[149]}}</span>
+											</div>
+										</div>
+
+										<div class="bet otherbet">
+											<!--黑-->
+											<div class="betmoney" ng-if="serverdata.bet[147]!=0">
+												<span>{{serverdata.bet[147]}}</span>
+											</div>
+										</div>
+										
+										<div class="bet otherbet">
+											<!--红-->
+											<div class="betmoney" ng-if="serverdata.bet[146]!=0">
+												<span>{{serverdata.bet[146]}}</span>
+											</div>
+										</div>
+										<div class="bet otherbet">
+											<!--单-->
+											<div class="betmoney" ng-if="serverdata.bet[148]!=0">
+												<span>{{serverdata.bet[148]}}</span>
+											</div>
+										</div>
+									
+										<div class="bet otherbet">
+												<!--19-36-->
+											<div class="betmoney" ng-if="serverdata.bet[145]!=0">
+												<span>{{serverdata.bet[145]}}</span>
+											</div>
+										</div>
+							</div>
+							<div class=" col col-20 roul-maxwidth">
+										
+										<div class="bet dabet roul-otherdiv">
+											<!--1-12-->
+											<div class="betmoney" ng-if="serverdata.bet[150]!=0">
+												<span>{{serverdata.bet[150]}}</span>
+											</div>
+										</div>
+										<div class="bet dabet">
+											<!--13-24-->
+											<div class="betmoney" ng-if="serverdata.bet[151]!=0">
+												<span>{{serverdata.bet[151]}}</span>
+											</div>
+										</div>
+										<div class="bet dabet">
+											<!--25-36-->
+											<div class="betmoney" ng-if="serverdata.bet[152]!=0">
+												<span>{{serverdata.bet[152]}}</span>
+											</div>
+										</div>
+							</div>
+							<div class="col col-60 roul-maxwidth">
+								<div>
+									<div class="bet betmaxheight">
+										<!--00-->
+										<div class="betmoney" ng-if="serverdata.bet[0]!=0">
+												<span>{{serverdata.bet[0]}}</span>
+											</div>
+									</div>
+								</div>
+								<div class=" row row-wrap">
+									<div class="roul-maxwidth" style="width:30%">
+										<div class=" bet betminheight">
+											<!--0001-->
+											<div class="betmoney" ng-if="serverdata.bet[70]!=0">
+												<span>{{serverdata.bet[70]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--01-->
+											<div class="betmoney" ng-if="serverdata.bet[1]!=0">
+												<span>{{serverdata.bet[1]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0104-->
+											<div class="betmoney" ng-if="serverdata.bet[37]!=0">
+												<span>{{serverdata.bet[37]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--04-->
+											<div class="betmoney" ng-if="serverdata.bet[4]!=0">
+												<span>{{serverdata.bet[4]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0407-->
+											<div class="betmoney" ng-if="serverdata.bet[40]!=0">
+												<span>{{serverdata.bet[40]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--07-->
+											<div class="betmoney" ng-if="serverdata.bet[7]!=0">
+												<span>{{serverdata.bet[7]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0710-->
+											<div class="betmoney" ng-if="serverdata.bet[43]!=0">
+												<span>{{serverdata.bet[43]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--10-->
+											<div class="betmoney" ng-if="serverdata.bet[10]!=0">
+												<span>{{serverdata.bet[10]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1013-->
+											<div class="betmoney" ng-if="serverdata.bet[46]!=0">
+												<span>{{serverdata.bet[46]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--13-->
+											<div class="betmoney" ng-if="serverdata.bet[13]!=0">
+												<span>{{serverdata.bet[13]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1316-->
+											<div class="betmoney" ng-if="serverdata.bet[49]!=0">
+												<span>{{serverdata.bet[49]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--16-->
+											<div class="betmoney" ng-if="serverdata.bet[16]!=0">
+												<span>{{serverdata.bet[16]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1619-->
+											<div class="betmoney" ng-if="serverdata.bet[52]!=0">
+												<span>{{serverdata.bet[52]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--19-->
+											<div class="betmoney" ng-if="serverdata.bet[19]!=0">
+												<span>{{serverdata.bet[19]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1922-->
+											<div class="betmoney" ng-if="serverdata.bet[55]!=0">
+												<span>{{serverdata.bet[55]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--22-->
+											<div class="betmoney" ng-if="serverdata.bet[22]!=0">
+												<span>{{serverdata.bet[22]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2225-->
+											<div class="betmoney" ng-if="serverdata.bet[58]!=0">
+												<span>{{serverdata.bet[58]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--25-->
+											<div class="betmoney" ng-if="serverdata.bet[25]!=0">
+												<span>{{serverdata.bet[25]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2528-->
+											<div class="betmoney" ng-if="serverdata.bet[61]!=0">
+												<span>{{serverdata.bet[61]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--28-->
+											<div class="betmoney" ng-if="serverdata.bet[28]!=0">
+												<span>{{serverdata.bet[28]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2831-->
+											<div class="betmoney" ng-if="serverdata.bet[64]!=0">
+												<span>{{serverdata.bet[64]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--31-->
+											<div class="betmoney" ng-if="serverdata.bet[31]!=0">
+												<span>{{serverdata.bet[31]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--3134-->
+											<div class="betmoney" ng-if="serverdata.bet[67]!=0">
+												<span>{{serverdata.bet[67]}}</span>
+											</div>
+										</div>
+										<div class="bet liebet">
+											<!--34-->
+											<div class="betmoney" ng-if="serverdata.bet[34]!=0">
+												<span>{{serverdata.bet[34]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="roul-minwidth" style="width:5%">
+										<div class="bet betminheight">
+											<!--000102-->
+											<div class="betmoney" ng-if="serverdata.bet[97]!=0">
+												<span>{{serverdata.bet[97]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0102-->
+											<div class="betmoney" ng-if="serverdata.bet[73]!=0">
+												<span>{{serverdata.bet[73]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--01020405-->
+											<div class="betmoney" ng-if="serverdata.bet[111]!=0">
+												<span>{{serverdata.bet[111]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0405-->
+											<div class="betmoney" ng-if="serverdata.bet[75]!=0">
+												<span>{{serverdata.bet[75]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--04050708-->
+											<div class="betmoney" ng-if="serverdata.bet[113]!=0">
+												<span>{{serverdata.bet[113]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0708-->
+											<div class="betmoney" ng-if="serverdata.bet[77]!=0">
+												<span>{{serverdata.bet[77]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--07081011-->
+											<div class="betmoney" ng-if="serverdata.bet[115]!=0">
+												<span>{{serverdata.bet[115]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1011-->
+											<div class="betmoney" ng-if="serverdata.bet[79]!=0">
+												<span>{{serverdata.bet[79]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--10111314-->
+											<div class="betmoney" ng-if="serverdata.bet[117]!=0">
+												<span>{{serverdata.bet[117]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1314-->
+											<div class="betmoney" ng-if="serverdata.bet[81]!=0">
+												<span>{{serverdata.bet[81]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--13141617-->
+											<div class="betmoney" ng-if="serverdata.bet[119]!=0">
+												<span>{{serverdata.bet[119]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1617-->
+											<div class="betmoney" ng-if="serverdata.bet[83]!=0">
+												<span>{{serverdata.bet[83]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--16171920-->
+											<div class="betmoney" ng-if="serverdata.bet[121]!=0">
+												<span>{{serverdata.bet[121]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1920-->
+											<div class="betmoney" ng-if="serverdata.bet[85]!=0">
+												<span>{{serverdata.bet[85]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--19202223-->
+											<div class="betmoney" ng-if="serverdata.bet[123]!=0">
+												<span>{{serverdata.bet[123]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2223-->
+											<div class="betmoney" ng-if="serverdata.bet[87]!=0">
+												<span>{{serverdata.bet[87]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--22232526-->
+											<div class="betmoney" ng-if="serverdata.bet[125]!=0">
+												<span>{{serverdata.bet[125]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2526-->
+											<div class="betmoney" ng-if="serverdata.bet[89]!=0">
+												<span>{{serverdata.bet[89]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--25262829-->
+											<div class="betmoney" ng-if="serverdata.bet[127]!=0">
+												<span>{{serverdata.bet[127]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2829-->
+											<div class="betmoney" ng-if="serverdata.bet[91]!=0">
+												<span>{{serverdata.bet[91]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--28293132-->
+											<div class="betmoney" ng-if="serverdata.bet[129]!=0">
+												<span>{{serverdata.bet[129]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--3132-->
+											<div class="betmoney" ng-if="serverdata.bet[93]!=0">
+												<span>{{serverdata.bet[93]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--31323435-->
+											<div class="betmoney" ng-if="serverdata.bet[131]!=0">
+												<span>{{serverdata.bet[131]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--3435-->
+											<div class="betmoney" ng-if="serverdata.bet[95]!=0">
+												<span>{{serverdata.bet[95]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="roul-maxwidth" style="width:28%">
+										<div class="bet betminheight">
+											<!--0002-->
+											<div class="betmoney" ng-if="serverdata.bet[71]!=0">
+												<span>{{serverdata.bet[71]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--02-->
+											<div class="betmoney" ng-if="serverdata.bet[2]!=0">
+												<span>{{serverdata.bet[2]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0205-->
+											<div class="betmoney" ng-if="serverdata.bet[38]!=0">
+												<span>{{serverdata.bet[38]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--05-->
+											<div class="betmoney" ng-if="serverdata.bet[5]!=0">
+												<span>{{serverdata.bet[5]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0508-->
+											<div class="betmoney" ng-if="serverdata.bet[41]!=0">
+												<span>{{serverdata.bet[41]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--08-->
+											<div class="betmoney" ng-if="serverdata.bet[8]!=0">
+												<span>{{serverdata.bet[8]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0811-->
+											<div class="betmoney" ng-if="serverdata.bet[44]!=0">
+												<span>{{serverdata.bet[44]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--11-->
+											<div class="betmoney" ng-if="serverdata.bet[11]!=0">
+												<span>{{serverdata.bet[11]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1114-->
+											<div class="betmoney" ng-if="serverdata.bet[47]!=0">
+												<span>{{serverdata.bet[47]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--14-->
+											<div class="betmoney" ng-if="serverdata.bet[14]!=0">
+												<span>{{serverdata.bet[14]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1417-->
+											<div class="betmoney" ng-if="serverdata.bet[50]!=0">
+												<span>{{serverdata.bet[50]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--17-->
+											<div class="betmoney" ng-if="serverdata.bet[17]!=0">
+												<span>{{serverdata.bet[17]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1720-->
+											<div class="betmoney" ng-if="serverdata.bet[53]!=0">
+												<span>{{serverdata.bet[53]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--20-->
+											<div class="betmoney" ng-if="serverdata.bet[20]!=0">
+												<span>{{serverdata.bet[20]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2023-->
+											<div class="betmoney" ng-if="serverdata.bet[56]!=0">
+												<span>{{serverdata.bet[56]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--23-->
+											<div class="betmoney" ng-if="serverdata.bet[23]!=0">
+												<span>{{serverdata.bet[23]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2326-->
+											<div class="betmoney" ng-if="serverdata.bet[59]!=0">
+												<span>{{serverdata.bet[59]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--26-->
+											<div class="betmoney" ng-if="serverdata.bet[26]!=0">
+												<span>{{serverdata.bet[26]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2629-->
+											<div class="betmoney" ng-if="serverdata.bet[62]!=0">
+												<span>{{serverdata.bet[62]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--29-->
+											<div class="betmoney" ng-if="serverdata.bet[29]!=0">
+												<span>{{serverdata.bet[29]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2932-->
+											<div class="betmoney" ng-if="serverdata.bet[65]!=0">
+												<span>{{serverdata.bet[65]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--32-->
+											<div class="betmoney" ng-if="serverdata.bet[32]!=0">
+												<span>{{serverdata.bet[32]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--3235-->
+											<div class="betmoney" ng-if="serverdata.bet[68]!=0">
+												<span>{{serverdata.bet[68]}}</span>
+											</div>
+										</div>
+										<div class="bet liebet">
+											<!--35-->
+											<div class="betmoney" ng-if="serverdata.bet[35]!=0">
+												<span>{{serverdata.bet[35]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="roul-minwidth" style="width:5%">
+										<div class="bet betminheight">
+											<!--000203-->
+											<div class="betmoney" ng-if="serverdata.bet[98]!=0">
+												<span>{{serverdata.bet[98]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0203-->
+											<div class="betmoney" ng-if="serverdata.bet[74]!=0">
+												<span>{{serverdata.bet[74]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--02030506-->
+											<div class="betmoney" ng-if="serverdata.bet[112]!=0">
+												<span>{{serverdata.bet[112]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0506-->
+											<div class="betmoney" ng-if="serverdata.bet[76]!=0">
+												<span>{{serverdata.bet[76]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--05060809-->
+											<div class="betmoney" ng-if="serverdata.bet[114]!=0">
+												<span>{{serverdata.bet[114]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--0809-->
+											<div class="betmoney" ng-if="serverdata.bet[78]!=0">
+												<span>{{serverdata.bet[78]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--08091112-->
+											<div class="betmoney" ng-if="serverdata.bet[116]!=0">
+												<span>{{serverdata.bet[116]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1112-->
+											<div class="betmoney" ng-if="serverdata.bet[80]!=0">
+												<span>{{serverdata.bet[80]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--11121415-->
+											<div class="betmoney" ng-if="serverdata.bet[118]!=0">
+												<span>{{serverdata.bet[118]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1415-->
+											<div class="betmoney" ng-if="serverdata.bet[82]!=0">
+												<span>{{serverdata.bet[82]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--14151718-->
+											<div class="betmoney" ng-if="serverdata.bet[120]!=0">
+												<span>{{serverdata.bet[120]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--1718-->
+											<div class="betmoney" ng-if="serverdata.bet[84]!=0">
+												<span>{{serverdata.bet[84]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--17182021-->
+											<div class="betmoney" ng-if="serverdata.bet[122]!=0">
+												<span>{{serverdata.bet[122]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2021-->
+											<div class="betmoney" ng-if="serverdata.bet[86]!=0">
+												<span>{{serverdata.bet[86]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--20212324-->
+											<div class="betmoney" ng-if="serverdata.bet[124]!=0">
+												<span>{{serverdata.bet[124]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2324-->
+											<div class="betmoney" ng-if="serverdata.bet[88]!=0">
+												<span>{{serverdata.bet[88]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--23242627-->
+											<div class="betmoney" ng-if="serverdata.bet[126]!=0">
+												<span>{{serverdata.bet[126]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2627-->
+											<div class="betmoney" ng-if="serverdata.bet[90]!=0">
+												<span>{{serverdata.bet[90]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--26272930-->
+											<div class="betmoney" ng-if="serverdata.bet[128]!=0">
+												<span>{{serverdata.bet[128]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--2930-->
+											<div class="betmoney" ng-if="serverdata.bet[92]!=0">
+												<span>{{serverdata.bet[92]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!---29303233-->
+											<div class="betmoney" ng-if="serverdata.bet[130]!=0">
+												<span>{{serverdata.bet[130]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--3233-->
+											<div class="betmoney" ng-if="serverdata.bet[94]!=0">
+												<span>{{serverdata.bet[94]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--32333536-->
+											<div class="betmoney" ng-if="serverdata.bet[132]!=0">
+												<span>{{serverdata.bet[132]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--3536-->
+											<div class="betmoney" ng-if="serverdata.bet[96]!=0">
+												<span>{{serverdata.bet[96]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="roul-maxwidth" style="width:28%">
+										<div class="bet betminheight">
+											<!--0003-->
+											<div class="betmoney" ng-if="serverdata.bet[72]!=0">
+												<span>{{serverdata.bet[72]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--03-->
+											<div class="betmoney" ng-if="serverdata.bet[3]!=0">
+												<span>{{serverdata.bet[3]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0306-->
+											<div class="betmoney" ng-if="serverdata.bet[39]!=0">
+												<span>{{serverdata.bet[39]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--06-->
+											<div class="betmoney" ng-if="serverdata.bet[6]!=0">
+												<span>{{serverdata.bet[6]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0609-->
+											<div class="betmoney" ng-if="serverdata.bet[42]!=0">
+												<span>{{serverdata.bet[42]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--09-->
+											<div class="betmoney" ng-if="serverdata.bet[9]!=0">
+												<span>{{serverdata.bet[9]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--0912-->
+											<div class="betmoney" ng-if="serverdata.bet[45]!=0">
+												<span>{{serverdata.bet[45]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--12-->
+											<div class="betmoney" ng-if="serverdata.bet[12]!=0">
+												<span>{{serverdata.bet[12]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1215-->
+											<div class="betmoney" ng-if="serverdata.bet[48]!=0">
+												<span>{{serverdata.bet[48]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--15-->
+											<div class="betmoney" ng-if="serverdata.bet[15]!=0">
+												<span>{{serverdata.bet[15]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1518-->
+											<div class="betmoney" ng-if="serverdata.bet[51]!=0">
+												<span>{{serverdata.bet[51]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--18-->
+											<div class="betmoney" ng-if="serverdata.bet[18]!=0">
+												<span>{{serverdata.bet[18]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--1821-->
+											<div class="betmoney" ng-if="serverdata.bet[54]!=0">
+												<span>{{serverdata.bet[54]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--21-->
+											<div class="betmoney" ng-if="serverdata.bet[21]!=0">
+												<span>{{serverdata.bet[21]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2124-->
+											<div class="betmoney" ng-if="serverdata.bet[57]!=0">
+												<span>{{serverdata.bet[57]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--24-->
+											<div class="betmoney" ng-if="serverdata.bet[24]!=0">
+												<span>{{serverdata.bet[24]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2427-->
+											<div class="betmoney" ng-if="serverdata.bet[60]!=0">
+												<span>{{serverdata.bet[60]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--27-->
+											<div class="betmoney" ng-if="serverdata.bet[27]!=0">
+												<span>{{serverdata.bet[27]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--2730-->
+											<div class="betmoney" ng-if="serverdata.bet[63]!=0">
+												<span>{{serverdata.bet[63]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--30-->
+											<div class="betmoney" ng-if="serverdata.bet[30]!=0">
+												<span>{{serverdata.bet[30]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--3033-->
+											<div class="betmoney" ng-if="serverdata.bet[66]!=0">
+												<span>{{serverdata.bet[66]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--33-->
+											<div class="betmoney" ng-if="serverdata.bet[33]!=0">
+												<span>{{serverdata.bet[33]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--3336-->
+											<div class="betmoney" ng-if="serverdata.bet[69]!=0">
+												<span>{{serverdata.bet[69]}}</span>
+											</div>
+										</div>
+										<div class="bet liebet">
+											<!--36-->
+											<div class="betmoney" ng-if="serverdata.bet[36]!=0">
+												<span>{{serverdata.bet[36]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="roul-minwidth" >
+										<div class="bet betmaxheight roul-thsixdiv">
+											<!--010203-->
+											<div class="betmoney" ng-if="serverdata.bet[99]!=0">
+												<span>{{serverdata.bet[99]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--010203040506-->
+											<div class="betmoney" ng-if="serverdata.bet[133]!=0">
+												<span>{{serverdata.bet[133]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--040506-->
+											<div class="betmoney" ng-if="serverdata.bet[100]!=0">
+												<span>{{serverdata.bet[100]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--040506070809-->
+											<div class="betmoney" ng-if="serverdata.bet[134]!=0">
+												<span>{{serverdata.bet[134]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--070809-->
+											<div class="betmoney" ng-if="serverdata.bet[101]!=0">
+												<span>{{serverdata.bet[101]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--070809101112-->
+											<div class="betmoney" ng-if="serverdata.bet[135]!=0">
+												<span>{{serverdata.bet[135]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--101112-->
+											<div class="betmoney" ng-if="serverdata.bet[102]!=0">
+												<span>{{serverdata.bet[102]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--101112131415-->
+											<div class="betmoney" ng-if="serverdata.bet[136]!=0">
+												<span>{{serverdata.bet[136]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--131415-->
+											<div class="betmoney" ng-if="serverdata.bet[103]!=0">
+												<span>{{serverdata.bet[103]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--131415161718-->
+											<div class="betmoney" ng-if="serverdata.bet[137]!=0">
+												<span>{{serverdata.bet[137]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--161718-->
+											<div class="betmoney" ng-if="serverdata.bet[104]!=0">
+												<span>{{serverdata.bet[104]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--161718192021-->
+											<div class="betmoney" ng-if="serverdata.bet[138]!=0">
+												<span>{{serverdata.bet[138]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--192021-->
+											<div class="betmoney" ng-if="serverdata.bet[105]!=0">
+												<span>{{serverdata.bet[105]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--192021222324-->
+											<div class="betmoney" ng-if="serverdata.bet[139]!=0">
+												<span>{{serverdata.bet[139]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--222324-->
+											<div class="betmoney" ng-if="serverdata.bet[106]!=0">
+												<span>{{serverdata.bet[106]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--222324252627-->
+											<div class="betmoney" ng-if="serverdata.bet[140]!=0">
+												<span>{{serverdata.bet[140]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--252627-->
+											<div class="betmoney" ng-if="serverdata.bet[107]!=0">
+												<span>{{serverdata.bet[107]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--252627282930-->
+											<div class="betmoney" ng-if="serverdata.bet[141]!=0">
+												<span>{{serverdata.bet[141]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--282930-->
+											<div class="betmoney" ng-if="serverdata.bet[108]!=0">
+												<span>{{serverdata.bet[108]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--282930313233-->
+											<div class="betmoney" ng-if="serverdata.bet[142]!=0">
+												<span>{{serverdata.bet[142]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--313233-->
+											<div class="betmoney" ng-if="serverdata.bet[109]!=0">
+												<span>{{serverdata.bet[109]}}</span>
+											</div>
+										</div>
+										<div class="bet betminheight">
+											<!--313233343536-->
+											<div class="betmoney" ng-if="serverdata.bet[143]!=0">
+												<span>{{serverdata.bet[143]}}</span>
+											</div>
+										</div>
+										<div class="bet betmaxheight">
+											<!--343536-->
+											<div class="betmoney" ng-if="serverdata.bet[110]!=0">
+												<span>{{serverdata.bet[110]}}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row row-wrap roul-maxwidth">
+									<div class="col col-33">
+										<div class="bet liebet">
+											<!--1:2-->
+											<div class="betmoney" ng-if="serverdata.bet[153]!=0">
+												<span>{{serverdata.bet[153]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="col col-33">
+										<div class="bet liebet">
+											<!--1:2-->
+											<div class="betmoney" ng-if="serverdata.bet[154]!=0">
+												<span>{{serverdata.bet[154]}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="col col-33">
+										<div class="bet liebet">
+											<!--1:2-->
+											<div class="betmoney" ng-if="serverdata.bet[155]!=0">
+												<span>{{serverdata.bet[155]}}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!--点击层
+                    -->
+				<div id="RoulPosBet" class="row row-wrap roul-posbet ">
+						<div class="col col-20 ">
+									<a class="otherbet roul-otherdiv" ng-click="OnBet(144)">
+										<!--1-18-->
+									</a>
+									
+									<a class="otherbet" ng-click="OnBet(149)">
+										<!--双-->
+									</a>
+
+									<a class="otherbet" ng-click="OnBet(147)">
+										<!--黑-->
+									</a>
+									
+									<a class="otherbet" ng-click="OnBet(146)">
+											<!--红-->
+									</a>
+									<a class="otherbet" ng-click="OnBet(148)">
+										<!--单-->
+									</a>
+									<a class="otherbet" ng-click="OnBet(145)">
+										<!--19-36-->
+									</a>
+								</div>
+								<div class="col col-20">
+									<a class="dabet roul-otherdiv" ng-click="OnBet(150)">
+										<!--1-12-->
+									</a>
+									<a class="dabet" ng-click="OnBet(151)">
+										<!--13-24-->
+									</a>
+									<a class="dabet" ng-click="OnBet(152)">
+										<!--25-36-->
+									</a>
+								</div>
+						<div class="col col-60">
+							<div>
+								<a class="betmaxheight" ng-click="OnBet(0)">
+									<!--00-->
+								</a>
+							</div>
+							<div class="row row-wrap">
+								<div style="width:30%">
+									<a class="betminheight" ng-click="OnBet(070)">
+										<!--0001-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(1)">
+										<!--01-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(37)">
+										<!--0104-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(4)">
+										<!--04-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(40)">
+										<!--0407-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(7)">
+										<!--07-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(43)">
+										<!--0710-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(10)">
+										<!--10-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(46)">
+										<!--1013-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(13)">
+										<!--13-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(49)">
+										<!--1316-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(16)">
+										<!--16-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(52)">
+										<!--1619-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(19)">
+										<!--19-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(55)">
+										<!--1922-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(22)">
+										<!--22-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(58)">
+										<!--2225-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(25)">
+										<!--25-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(61)">
+										<!--2528-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(28)">
+										<!--28-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(64)">
+										<!--2831-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(31)">
+										<!--31-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(67)">
+										<!--3134-->
+									</a>
+									<a class="liebet" ng-click="OnBet(34)">
+										<!--34-->
+									</a>
+								</div>
+								<div style="width:5%">
+									<a class="betminheight" ng-click="OnBet(97)">
+										<!--000102-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(73)">
+										<!--0102-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(111)">
+										<!--01020405-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(75)">
+										<!--0405-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(113)">
+										<!--04050708-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(77)">
+										<!--0708-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(115)">
+										<!--07081011-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(79)">
+										<!--1011-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(117)">
+										<!--10111314-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(81)">
+										<!--1314-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(119)">
+										<!--13141617-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(83)">
+										<!--1617-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(121)">
+										<!--16171920-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(85)">
+										<!--1920-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(123)">
+										<!--19202223-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(87)">
+										<!--2223-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(125)">
+										<!--22232526-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(89)">
+										<!--2526-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(127)">
+										<!--25262829-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(91)">
+										<!--2829-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(129)">
+										<!--28293132-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(93)">
+										<!--3132-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(131)">
+										<!--31323435-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(95)">
+										<!--3435-->
+									</a>
+								</div>
+								<div style="width:28%">
+									<a class="betminheight" ng-click="OnBet(71)">
+										<!--0002-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(2)">
+										<!--02-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(38)">
+										<!--0205-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(5)">
+										<!--05-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(41)">
+										<!--0508-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(8)">
+										<!--08-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(44)">
+										<!--0811-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(11)">
+										<!--11-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(47)">
+										<!--1114-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(14)">
+										<!--14-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(50)">
+										<!--1417-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(17)">
+										<!--17-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(53)">
+										<!--1720-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(20)">
+										<!--20-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(56)">
+										<!--2023-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(23)">
+										<!--23-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(59)">
+										<!--2326-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(26)">
+										<!--26-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(62)">
+										<!--2629-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(29)">
+										<!--29-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(65)">
+										<!--2932-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(32)">
+										<!--32-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(68)">
+										<!--3235-->
+									</a>
+									<a class="liebet" ng-click="OnBet(35)">
+										<!--35-->
+									</a>
+								</div>
+								<div style="width:5%">
+									<a class="betminheight" ng-click="OnBet(98)">
+										<!--000203-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(74)">
+										<!--0203-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(112)">
+										<!--02030506-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(76)">
+										<!--0506-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(114)">
+										<!--05060809-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(78)">
+										<!--0809-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(116)">
+										<!--08091112-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(80)">
+										<!--1112-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(118)">
+										<!--11121415-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(82)">
+										<!--1415-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(120)">
+										<!--14151718-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(84)">
+										<!--1718-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(122)">
+										<!--17182021-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(86)">
+										<!--2021-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(124)">
+										<!--20212324-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(88)">
+										<!--2324-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(126)">
+										<!--23242627-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(90)">
+										<!--2627-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(128)">
+										<!--26272930-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(92)">
+										<!--2930-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(130)">
+										<!---29303233-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(94)">
+										<!--3233-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(132)">
+										<!--32333536-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(96)">
+										<!--3536-->
+									</a>
+								</div>
+								<div style="width:28%">
+									<a class="betminheight" ng-click="OnBet(72)">
+										<!--0003-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(3)">
+										<!--03-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(39)">
+										<!--0306-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(6)">
+										<!--06-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(42)">
+										<!--0609-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(9)">
+										<!--09-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(45)">
+										<!--0912-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(12)">
+										<!--12-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(48)">
+										<!--1215-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(15)">
+										<!--15-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(51)">
+										<!--1518-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(18)">
+										<!--18-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(54)">
+										<!--1821-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(21)">
+										<!--21-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(57)">
+										<!--2124-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(24)">
+										<!--24-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(60)">
+										<!--2427-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(27)">
+										<!--27-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(63)">
+										<!--2730-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(30)">
+										<!--30-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(66)">
+										<!--3033-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(33)">
+										<!--33-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(69)">
+										<!--3336-->
+									</a>
+									<a class="liebet" ng-click="OnBet(36)">
+										<!--36-->
+									</a>
+								</div>
+								<div class="col col-5 ">
+									<a class="betmaxheight roul-thsixdiv" ng-click="OnBet(99)">
+										<!--010203-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(133)">
+										<!--010203040506-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(100)">
+										<!--040506-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(134)">
+										<!--040506070809-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(101)">
+										<!--070809-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(135)">
+										<!--070809101112-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(102)">
+										<!--101112-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(136)">
+										<!--101112131415-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(103)">
+										<!--131415-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(137)">
+										<!--131415161718-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(104)">
+										<!--161718-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(138)">
+										<!--161718192021-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(105)">
+										<!--192021-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(139)">
+										<!--192021222324-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(106)">
+										<!--222324-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(140)">
+										<!--222324252627-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(107)">
+										<!--252627-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(141)">
+										<!--252627282930-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(108)">
+										<!--282930-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(142)">
+										<!--282930313233-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(109)">
+										<!--313233-->
+									</a>
+									<a class="betminheight" ng-click="OnBet(143)">
+										<!--313233343536-->
+									</a>
+									<a class="betmaxheight" ng-click="OnBet(110)">
+										<!--343536-->
+									</a>
+								</div>
+							</div>
+							<div class="row row-wrap">
+								<div class="col col-33">
+									<a class="liebet" ng-click="OnBet(153)">
+										<!--1:2-->
+									</a>
+								</div>
+								<div class="col col-33" >
+									<a class="liebet" ng-click="OnBet(154)">
+										<!--1:2-->
+									</a>
+								</div>
+								<div class="col col-33" >
+									<a class="liebet" ng-click="OnBet(155)">
+										<!--1:2-->
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<betpos-Btn></betpos-Btn>
+			</ion-scroll>
+		</div>
+		</ion-scroll>
+		<select-Chips ng-show="serverdata.isShowChips"></select-Chips>
+		<info-Bottom class="roul-bootom"></info-Bottom>
+	</ion-content>
+</ion-view>
